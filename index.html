@@ -433,6 +433,66 @@
         box-shadow: none;
       }
 
+      .booking-block {
+        margin-top: 18px;
+        padding-top: 16px;
+        border-top: 1px solid rgba(32, 53, 61, 0.08);
+      }
+
+      .booking-title {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 6px 12px;
+        border-radius: 999px;
+        background: rgba(11, 106, 112, 0.1);
+        color: var(--brand);
+        font-size: 13px;
+        font-weight: 700;
+      }
+
+      .support-row,
+      .card-tags,
+      .ticket-meta {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+      }
+
+      .support-row {
+        margin-top: 12px;
+      }
+
+      .card-tags {
+        margin-top: 14px;
+      }
+
+      .ticket-meta {
+        margin-top: 8px;
+        gap: 8px;
+      }
+
+      .support-link {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        padding: 8px 11px;
+        border-radius: 999px;
+        text-decoration: none;
+        font-size: 13px;
+        font-weight: 700;
+        color: var(--brand-deep);
+        background: rgba(11, 106, 112, 0.08);
+        border: 1px solid rgba(11, 106, 112, 0.12);
+      }
+
+      .support-note {
+        margin-top: 12px;
+        font-size: 13px;
+        color: var(--ink-soft);
+      }
+
       .table-wrap {
         overflow-x: auto;
         border-radius: 24px;
@@ -568,7 +628,7 @@
         </div>
         <nav class="anchor-list" aria-label="页面导航">
           <a href="#overview">概览</a>
-          <a href="#itinerary">行程</a>
+          <a href="#itinerary">按天预定</a>
           <a href="#tickets">官方票务</a>
           <a href="#hotels">具体酒店</a>
           <a href="#activities">活动预订</a>
@@ -622,12 +682,26 @@
                   按 easyJet 官方口径，已按 2 件标准托运行李处理，每件 23kg，总共 46kg，可在同一预订下做重量池化。
                 </li>
               </ul>
+              <div class="booking-block">
+                <span class="booking-title">航班官方操作入口</span>
+                <div class="button-row">
+                  <a class="button-link" href="https://www.easyjet.com/en/manage/my-bookings" target="_blank" rel="noopener noreferrer">easyJet My Bookings</a>
+                  <a class="button-link secondary" href="https://www.easyjet.com/en/help/booking-and-check-in/check-in" target="_blank" rel="noopener noreferrer">easyJet Check-in</a>
+                  <a class="button-link" href="https://www.egyptair.com/en/Book/Pages/my-reservations.aspx" target="_blank" rel="noopener noreferrer">EgyptAir My Bookings</a>
+                  <a class="button-link secondary" href="https://www.egyptair.com/en/fly/check-in/Pages/web-check-in.aspx" target="_blank" rel="noopener noreferrer">EgyptAir Web Check-in</a>
+                </div>
+                <div class="support-row">
+                  <a class="support-link" href="https://www.easyjet.com/en/help/baggage/hold-luggage" target="_blank" rel="noopener noreferrer">easyJet 行李</a>
+                  <a class="support-link" href="https://www.egyptair.com/en/fly/baggage/Pages/baggage-allowance.aspx" target="_blank" rel="noopener noreferrer">EgyptAir 行李</a>
+                </div>
+              </div>
             </article>
 
             <article class="side-card">
               <h2>这页怎么用</h2>
               <ul class="check-list">
                 <li>先看第 1 部分的 8 天主行程，确认你们能接受 Day 7 上午看点位、下午换到 Giza 的节奏。</li>
+                <li>每一天的卡片里都已经塞进“当天一键预定”，默认酒店、活动、门票和航班操作入口都能直接点。</li>
                 <li>酒店区我按“更省预算型优先”排，另给了更稳妥的备选。</li>
                 <li>景点区全部放官方票务入口，活动区放运营方直链或可执行的主渠道入口。</li>
                 <li>预算区分成“在地预算”和“含已购国际机票占位的总预算”。</li>
@@ -697,6 +771,21 @@
               <li>如果住 Marina 或机场东侧，第二天参加出海活动接送更顺。</li>
               <li>今晚只做 3 件事：换少量现金、确认次日接送、早点睡。</li>
             </ul>
+            <div class="booking-block">
+              <span class="booking-title">当天一键预定</span>
+              <div class="button-row">
+                <a class="button-link" href="https://www.booking.com/hotel/eg/the-boutique-hurghada.html" target="_blank" rel="noopener noreferrer">Day 1 默认酒店</a>
+                <a class="button-link secondary" href="https://hrewards.com/en/steigenberger-aqua-magic-hurghada" target="_blank" rel="noopener noreferrer">Day 1 酒店升级</a>
+                <a class="button-link" href="https://www.easyjet.com/en/manage/my-bookings" target="_blank" rel="noopener noreferrer">easyJet My Bookings</a>
+              </div>
+              <div class="support-row">
+                <a class="support-link" href="https://www.easyjet.com/en/help/booking-and-check-in/check-in" target="_blank" rel="noopener noreferrer">easyJet Check-in</a>
+                <a class="support-link" href="https://www.easyjet.com/en/help/baggage/hold-luggage" target="_blank" rel="noopener noreferrer">easyJet 行李</a>
+                <a class="support-link" href="https://web.vodafone.com.eg/en/tourist-line" target="_blank" rel="noopener noreferrer">落地 SIM</a>
+                <a class="support-link" href="https://www.visa2egypt.gov.eg/eVisa/Home" target="_blank" rel="noopener noreferrer">官方 e-Visa</a>
+              </div>
+              <p class="support-note">别忘了：护照、电子签、保险和首晚酒店订单放在随身包里，落地会最顺。</p>
+            </div>
           </article>
 
           <article class="day-card">
@@ -712,6 +801,17 @@
               <li>傍晚去 Marina 区补人像和海边散步照片。</li>
               <li>如果你们怕晒，这一天一定把海上项目放最早，不要拖到中午后再出发。</li>
             </ul>
+            <div class="booking-block">
+              <span class="booking-title">当天一键预定</span>
+              <div class="button-row">
+                <a class="button-link" href="https://www.aquariusredsea.com/res-hrg.html" target="_blank" rel="noopener noreferrer">Day 2 红海船日主推</a>
+                <a class="button-link secondary" href="https://www.egyptsunmarine.com/en/fleet/royal-sea-scope/location/ship" target="_blank" rel="noopener noreferrer">不会游泳备选</a>
+                <a class="button-link" href="https://www.booking.com/hotel/eg/the-boutique-hurghada.html" target="_blank" rel="noopener noreferrer">Day 2 默认酒店</a>
+              </div>
+              <div class="support-row">
+                <a class="support-link" href="https://hrewards.com/en/steigenberger-aqua-magic-hurghada" target="_blank" rel="noopener noreferrer">Day 2 酒店升级</a>
+              </div>
+            </div>
           </article>
 
           <article class="day-card">
@@ -727,6 +827,16 @@
               <li>这天尽量不要把重点放在四轮车，选 Jeep 主体线路更稳。</li>
               <li>若行程里有 quad bike，必须戴头盔；不然宁可不骑。</li>
             </ul>
+            <div class="booking-block">
+              <span class="booking-title">当天一键预定</span>
+              <div class="button-row">
+                <a class="button-link" href="https://www.scorpionsafari.com/activity/stargazing-safari-in-hurghada" target="_blank" rel="noopener noreferrer">Day 3 冲沙观星主推</a>
+                <a class="button-link secondary" href="https://www.booking.com/hotel/eg/the-boutique-hurghada.html" target="_blank" rel="noopener noreferrer">Day 3 默认酒店</a>
+              </div>
+              <div class="support-row">
+                <a class="support-link" href="https://hrewards.com/en/steigenberger-aqua-magic-hurghada" target="_blank" rel="noopener noreferrer">Day 3 酒店升级</a>
+              </div>
+            </div>
           </article>
 
           <article class="day-card">
@@ -742,6 +852,17 @@
               <li>傍晚安排卢克索神庙，黄昏到夜景最值得拍。</li>
               <li>今晚要早休息，因为第二天是全程最早起的一天。</li>
             </ul>
+            <div class="booking-block">
+              <span class="booking-title">当天一键预定</span>
+              <div class="button-row">
+                <a class="button-link" href="https://www.booking.com/hotel/eg/nefertiti.html" target="_blank" rel="noopener noreferrer">Day 4 默认酒店</a>
+                <a class="button-link secondary" href="https://hrewards.com/en/steigenberger-nile-palace-luxor" target="_blank" rel="noopener noreferrer">Day 4 酒店升级</a>
+                <a class="button-link" href="https://egymonuments.com/details/LuxorTemple" target="_blank" rel="noopener noreferrer">Day 4 卢克索神庙票</a>
+              </div>
+              <div class="support-row">
+                <a class="support-link" href="https://www.nefertitihotel.com/" target="_blank" rel="noopener noreferrer">Nefertiti 官方站</a>
+              </div>
+            </div>
           </article>
 
           <article class="day-card">
@@ -757,6 +878,17 @@
               <li>落地后直奔帝王谷，越早越凉快，也更适合拍照。</li>
               <li>下午进卡纳克神庙，不建议再额外塞太多西岸景点，不然会疲劳过头。</li>
             </ul>
+            <div class="booking-block">
+              <span class="booking-title">当天一键预定</span>
+              <div class="button-row">
+                <a class="button-link" href="https://www.trip.com/things-to-do/detail/102064009/" target="_blank" rel="noopener noreferrer">Day 5 热气球主推</a>
+                <a class="button-link secondary" href="https://www.booking.com/attractions/eg/prirv1gecwb0-sunrise-hot-air-balloon-ride.html" target="_blank" rel="noopener noreferrer">Day 5 热气球备选</a>
+                <a class="button-link" href="https://egymonuments.com/details/ValleyOfKings" target="_blank" rel="noopener noreferrer">Day 5 帝王谷票</a>
+              </div>
+              <div class="support-row">
+                <a class="support-link" href="https://egymonuments.com/details/KarnakTemple" target="_blank" rel="noopener noreferrer">Day 5 卡纳克票</a>
+              </div>
+            </div>
           </article>
 
           <article class="day-card">
@@ -772,6 +904,21 @@
               <li>傍晚前安排 1 小时左右的尼罗河 felucca / 短时帆船，完成“尼罗河游船”体验。</li>
               <li>之后飞开罗，Day 6 先住市中心，Day 7 下午再转去 Giza，这样最后两天的动线最顺。</li>
             </ul>
+            <div class="booking-block">
+              <span class="booking-title">当天一键预定</span>
+              <div class="button-row">
+                <a class="button-link" href="https://www.luxorandaswan.com/Egypt/tour/Felucca-Ride-on-the-Nile" target="_blank" rel="noopener noreferrer">Day 6 尼罗河短船</a>
+                <a class="button-link secondary" href="https://www.booking.com/hotel/eg/tahrir-plaza-suites.html" target="_blank" rel="noopener noreferrer">Day 6 默认酒店</a>
+                <a class="button-link" href="https://www.egyptair.com/en/Book/Pages/my-reservations.aspx" target="_blank" rel="noopener noreferrer">EgyptAir My Bookings</a>
+              </div>
+              <div class="support-row">
+                <a class="support-link" href="https://www.booking.com/attractions/eg/prqdsbbavvrf-two-hour-nile-felucca-ride.en-gb.html" target="_blank" rel="noopener noreferrer">Day 6 短船备选</a>
+                <a class="support-link" href="https://www.egyptair.com/en/fly/check-in/Pages/web-check-in.aspx" target="_blank" rel="noopener noreferrer">EgyptAir Web Check-in</a>
+                <a class="support-link" href="https://www.egyptair.com/en/fly/baggage/Pages/baggage-allowance.aspx" target="_blank" rel="noopener noreferrer">EgyptAir 行李</a>
+                <a class="support-link" href="https://hrewards.com/en/steigenberger-hotel-el-tahrir-cairo" target="_blank" rel="noopener noreferrer">Day 6 酒店升级</a>
+              </div>
+              <p class="support-note">别忘了：国内段舱等和行李口径以 EgyptAir My Bookings 里显示的最终订单为准。</p>
+            </div>
           </article>
 
           <article class="day-card">
@@ -788,6 +935,18 @@
               <li>傍晚留给金字塔外景、屋顶晚霞、拍照和休息，不再安排新的硬景点。</li>
               <li>这一天真正的重点不是赶更多点，而是把 Day 8 的起点放到最顺的位置。</li>
             </ul>
+            <div class="booking-block">
+              <span class="booking-title">当天一键预定</span>
+              <div class="button-row">
+                <a class="button-link" href="https://egymonuments.com/details/SalahEldinCitadel" target="_blank" rel="noopener noreferrer">Day 7 城堡官方票</a>
+                <a class="button-link secondary" href="https://egymonuments.com/details/Mosque-MadrassaSultanHassan" target="_blank" rel="noopener noreferrer">Day 7 苏丹哈桑票</a>
+                <a class="button-link" href="https://www.booking.com/hotel/eg/great-pyramid-inn.html" target="_blank" rel="noopener noreferrer">Day 7 默认酒店</a>
+              </div>
+              <div class="support-row">
+                <a class="support-link" href="https://www.agoda.com/great-pyramid-inn/hotel/giza-eg.html" target="_blank" rel="noopener noreferrer">Day 7 酒店备选</a>
+                <a class="support-link" href="https://www.egyptair.com/en/fly/check-in/Pages/web-check-in.aspx" target="_blank" rel="noopener noreferrer">返程值机入口</a>
+              </div>
+            </div>
           </article>
 
           <article class="day-card">
@@ -803,6 +962,20 @@
               <li>中段转去大埃及博物馆，建议直接订早中段 admission ticket，不要拖到太晚。</li>
               <li>14:40 前后离开前往机场，17:40 搭 EgyptAir 回程；现在从 Giza 出发，时间会比住市中心更稳。</li>
             </ul>
+            <div class="booking-block">
+              <span class="booking-title">当天一键预定</span>
+              <div class="button-row">
+                <a class="button-link" href="https://egymonuments.com/details/Pyramids" target="_blank" rel="noopener noreferrer">Day 8 金字塔官方票</a>
+                <a class="button-link secondary" href="https://visit-gem.com/en/AdmissionTkt" target="_blank" rel="noopener noreferrer">Day 8 GEM 官方票</a>
+                <a class="button-link" href="https://www.egyptair.com/en/fly/check-in/Pages/web-check-in.aspx" target="_blank" rel="noopener noreferrer">EgyptAir Web Check-in</a>
+              </div>
+              <div class="support-row">
+                <a class="support-link" href="https://www.egyptair.com/en/Book/Pages/my-reservations.aspx" target="_blank" rel="noopener noreferrer">EgyptAir My Bookings</a>
+                <a class="support-link" href="https://www.egyptair.com/en/fly/baggage/Pages/baggage-allowance.aspx" target="_blank" rel="noopener noreferrer">EgyptAir 行李</a>
+                <a class="support-link" href="https://www.booking.com/hotel/eg/great-pyramid-inn.html" target="_blank" rel="noopener noreferrer">Day 8 默认酒店</a>
+              </div>
+              <p class="support-note">别忘了：回机场前确认值机、护照、返程订单、保险截图和所有重要文件都能离线打开。</p>
+            </div>
           </article>
         </div>
 
@@ -835,7 +1008,7 @@
             </thead>
             <tbody>
               <tr>
-                <td>吉萨金字塔群</td>
+                <td>吉萨金字塔群<div class="ticket-meta"><span class="badge">Day 8 主票</span></div></td>
                 <td>Day 8 07:00 起</td>
                 <td>EGP 700</td>
                 <td>官方页口径：夏季约 07:00 开，末次入场约 16:00</td>
@@ -843,7 +1016,7 @@
                 <td><a href="https://egymonuments.com/details/Pyramids" target="_blank" rel="noopener noreferrer">官方票务</a></td>
               </tr>
               <tr>
-                <td>大埃及博物馆 GEM</td>
+                <td>大埃及博物馆 GEM<div class="ticket-meta"><span class="badge">Day 8 主票</span></div></td>
                 <td>Day 8 中午</td>
                 <td>EGP 1,450</td>
                 <td>官方首页显示 last ticket purchase 5 PM；AdmissionTkt 为唯一官方购票入口</td>
@@ -851,7 +1024,7 @@
                 <td><a href="https://visit-gem.com/en/AdmissionTkt" target="_blank" rel="noopener noreferrer">官方购票</a></td>
               </tr>
               <tr>
-                <td>帝王谷</td>
+                <td>帝王谷<div class="ticket-meta"><span class="badge">Day 5 主票</span></div></td>
                 <td>Day 5 上午</td>
                 <td>EGP 750</td>
                 <td>官方页口径：夏季约 06:00 开，末次入场约 17:00</td>
@@ -859,7 +1032,7 @@
                 <td><a href="https://egymonuments.com/details/ValleyOfKings" target="_blank" rel="noopener noreferrer">官方票务</a></td>
               </tr>
               <tr>
-                <td>卡纳克神庙</td>
+                <td>卡纳克神庙<div class="ticket-meta"><span class="badge">Day 5 主票</span></div></td>
                 <td>Day 5 下午</td>
                 <td>EGP 600</td>
                 <td>官方详情页可直接下单；执行上建议 16:00 前入场</td>
@@ -867,7 +1040,7 @@
                 <td><a href="https://egymonuments.com/details/KarnakTemple" target="_blank" rel="noopener noreferrer">官方票务</a></td>
               </tr>
               <tr>
-                <td>卢克索神庙</td>
+                <td>卢克索神庙<div class="ticket-meta"><span class="badge">Day 4 主票</span></div></td>
                 <td>Day 4 黄昏</td>
                 <td>EGP 500</td>
                 <td>官方详情页可下单；执行上建议傍晚至夜景段去</td>
@@ -875,7 +1048,7 @@
                 <td><a href="https://egymonuments.com/details/LuxorTemple" target="_blank" rel="noopener noreferrer">官方票务</a></td>
               </tr>
               <tr>
-                <td>萨拉丁城堡</td>
+                <td>萨拉丁城堡<div class="ticket-meta"><span class="badge">Day 7 主票</span></div></td>
                 <td>Day 7 早晨</td>
                 <td>EGP 550</td>
                 <td>官方详情页可下单；建议一开门就去，和苏丹哈桑连成同一个上午</td>
@@ -883,7 +1056,7 @@
                 <td><a href="https://egymonuments.com/details/SalahEldinCitadel" target="_blank" rel="noopener noreferrer">官方票务</a></td>
               </tr>
               <tr>
-                <td>苏丹哈桑清真寺-经学院</td>
+                <td>苏丹哈桑清真寺-经学院<div class="ticket-meta"><span class="badge">Day 7 主票</span></div></td>
                 <td>Day 7 上午</td>
                 <td>EGP 220</td>
                 <td>官方详情页可下单；建议与城堡排在同一个上午</td>
@@ -921,6 +1094,10 @@
             <p>
               适合 Day 1-3。位置靠 Marina，晚上吃饭散步方便，做船日接送也顺。更适合想把住宿预算压下来的组合。
             </p>
+            <div class="card-tags">
+              <span class="meta-chip"><strong>适用日</strong> Day 1-3</span>
+              <span class="meta-chip"><strong>角色</strong> 默认酒店</span>
+            </div>
             <ul>
               <li>房型建议：2 间 twin 或 2 间 standard room，提前备注分性别。</li>
               <li>适合原因：海边活动方便、第一晚不需要再折腾远距离通勤。</li>
@@ -943,6 +1120,10 @@
             <p>
               适合想把前两晚做得更舒服的人。更像标准度假酒店，适合晚到后直接躺平，也适合第二天一早出海。
             </p>
+            <div class="card-tags">
+              <span class="meta-chip"><strong>适用日</strong> Day 1-3</span>
+              <span class="meta-chip"><strong>角色</strong> 酒店升级</span>
+            </div>
             <ul>
               <li>房型建议：2 间 twin room；舒适度通常比 Marina 小型酒店更稳。</li>
               <li>适合原因：机场落地后恢复快，设施完整。</li>
@@ -965,6 +1146,10 @@
             <p>
               适合 Day 4-5。它的优势是位置和性价比，不是奢华，但很适合只在卢克索住 2 晚、重点跑景点的人。
             </p>
+            <div class="card-tags">
+              <span class="meta-chip"><strong>适用日</strong> Day 4-5</span>
+              <span class="meta-chip"><strong>角色</strong> 默认酒店</span>
+            </div>
             <ul>
               <li>房型建议：2 间 twin 或 twin + double，越早订越好。</li>
               <li>适合原因：离卢克索神庙近，去东岸和西岸都方便。</li>
@@ -987,6 +1172,10 @@
             <p>
               如果你们想把卢克索这段住得更舒服，这是最省心的升级项。河景和服务感都更稳定，但预算也会上去。
             </p>
+            <div class="card-tags">
+              <span class="meta-chip"><strong>适用日</strong> Day 4-5</span>
+              <span class="meta-chip"><strong>角色</strong> 酒店升级</span>
+            </div>
             <ul>
               <li>房型建议：2 间 twin room；直接在预订备注里写 separate beds。</li>
               <li>适合原因：行程强度高的时候，住得更稳会明显减压。</li>
@@ -1009,6 +1198,10 @@
             <p>
               这家现在更适合作为 Day 6 抵达开罗后的过渡一晚。位置核心，晚上落地后不折腾，第二天一早跑城堡和苏丹哈桑都顺。
             </p>
+            <div class="card-tags">
+              <span class="meta-chip"><strong>适用日</strong> Day 6</span>
+              <span class="meta-chip"><strong>角色</strong> 默认酒店</span>
+            </div>
             <ul>
               <li>房型建议：2 间 twin room 或 2 间标准双床房。</li>
               <li>适合原因：Day 6 晚到开罗后入住轻松，Day 7 上午完成老城核心线最省时。</li>
@@ -1031,6 +1224,10 @@
             <p>
               这家现在就是最后一晚的默认方案。Day 7 下午转到 Giza 后，傍晚可以直接看金字塔外景，Day 8 一早进场也最顺。
             </p>
+            <div class="card-tags">
+              <span class="meta-chip"><strong>适用日</strong> Day 7-8</span>
+              <span class="meta-chip"><strong>角色</strong> 默认酒店</span>
+            </div>
             <ul>
               <li>房型建议：优先 twin room；景观房比基础房更适合拍照。</li>
               <li>适合原因：默认 split stay 里，它负责把最后一晚变成“早起少通勤、高概率拍到好光线”。</li>
@@ -1053,6 +1250,10 @@
             <p>
               如果预算允许，它是 Day 6 晚最省心的开罗选择。位置稳定、房型更整齐，适合落地开罗后直接恢复体力，第二天上午再跑核心点位。
             </p>
+            <div class="card-tags">
+              <span class="meta-chip"><strong>适用日</strong> Day 6</span>
+              <span class="meta-chip"><strong>角色</strong> 酒店升级</span>
+            </div>
             <ul>
               <li>房型建议：2 间 twin；若能订到联通房更适合 4 人同行。</li>
               <li>适合原因：更适合默认 split stay 里的第一晚开罗过渡，而不是把两晚都压在市中心。</li>
@@ -1089,6 +1290,10 @@
               <span class="source-type">运营方直链</span>
             </header>
             <p>适合会下水的人。不会游泳的同行，不建议勉强下海，直接改半潜艇或观景船更合适。</p>
+            <div class="card-tags">
+              <span class="meta-chip"><strong>适用日</strong> Day 2</span>
+              <span class="meta-chip"><strong>角色</strong> 主推活动</span>
+            </div>
             <ul>
               <li>为什么选：运营方页面直接有 Hurghada booking form，执行路径清楚。</li>
               <li>适合人群：会浮潜、想拍船上和海水活动的人。</li>
@@ -1096,7 +1301,7 @@
             </ul>
             <div class="button-row">
               <a class="button-link" href="https://www.aquariusredsea.com/res-hrg.html" target="_blank" rel="noopener noreferrer">运营方预订页</a>
-              <a class="button-link secondary" href="https://www.aquariusredsea.com/" target="_blank" rel="noopener noreferrer">运营方主页</a>
+              <a class="button-link secondary" href="https://www.egyptsunmarine.com/en/fleet/royal-sea-scope/location/ship" target="_blank" rel="noopener noreferrer">不会游泳备选</a>
             </div>
           </article>
 
@@ -1109,6 +1314,10 @@
               <span class="source-type">运营方 + 主渠道</span>
             </header>
             <p>这类项目更适合“不想下水但还是想看珊瑚和鱼”的人，是这组里最容易一半人下水、一半人不下水也都满意的方案。</p>
+            <div class="card-tags">
+              <span class="meta-chip"><strong>适用日</strong> Day 2</span>
+              <span class="meta-chip"><strong>角色</strong> 备选活动</span>
+            </div>
             <ul>
               <li>为什么选：你们同行里如果有人不会游泳，这个替代方案比强行上浮潜更稳。</li>
               <li>预订注意：优先看当天风浪，风大时宁可放弃。</li>
@@ -1116,7 +1325,6 @@
             </ul>
             <div class="button-row">
               <a class="button-link" href="https://www.egyptsunmarine.com/en/fleet/royal-sea-scope/location/ship" target="_blank" rel="noopener noreferrer">项目页面</a>
-              <a class="button-link secondary" href="https://www.egyptsunmarine.com/en" target="_blank" rel="noopener noreferrer">运营方主页</a>
             </div>
           </article>
 
@@ -1129,6 +1337,10 @@
               <span class="source-type">运营方官网 / 官方下单页</span>
             </header>
             <p>如果你们想把“冲沙 + 落日 + 晚餐 + 观星”一次做完，这是比单纯 quad bike 更适合这次旅行节奏的线路。</p>
+            <div class="card-tags">
+              <span class="meta-chip"><strong>适用日</strong> Day 3</span>
+              <span class="meta-chip"><strong>角色</strong> 主推活动</span>
+            </div>
             <ul>
               <li>为什么选：官方活动页就是 stargazing safari，不需要自己再拼项目。</li>
               <li>注意：看清线路里四轮车占比，Jeep 主体比 quad 主体更推荐。</li>
@@ -1136,7 +1348,6 @@
             </ul>
             <div class="button-row">
               <a class="button-link" href="https://www.scorpionsafari.com/activity/stargazing-safari-in-hurghada" target="_blank" rel="noopener noreferrer">运营方活动页</a>
-              <a class="button-link secondary" href="https://www.scorpionsafari.com/" target="_blank" rel="noopener noreferrer">运营方主页</a>
             </div>
           </article>
 
@@ -1149,6 +1360,10 @@
               <span class="source-type">主渠道页面</span>
             </header>
             <p>这是卢克索最值得保留的高光体验之一，但也是最依赖天气和临场调度的项目，所以一定不要把后续安排写得太死。</p>
+            <div class="card-tags">
+              <span class="meta-chip"><strong>适用日</strong> Day 5</span>
+              <span class="meta-chip"><strong>角色</strong> 主推活动</span>
+            </div>
             <ul>
               <li>为什么选：公开平台能直接下单，临近出发时也更方便比价和看取消规则。</li>
               <li>注意：热气球不是“越早订越便宜”这么简单，最重要是天气和接送确认。</li>
@@ -1156,7 +1371,7 @@
             </ul>
             <div class="button-row">
               <a class="button-link" href="https://www.trip.com/things-to-do/detail/102064009/" target="_blank" rel="noopener noreferrer">Trip.com 热气球页</a>
-              <a class="button-link secondary" href="https://www.booking.com/attractions/eg/city/eg/luxor.html" target="_blank" rel="noopener noreferrer">Booking 卢克索活动页</a>
+              <a class="button-link secondary" href="https://www.booking.com/attractions/eg/prirv1gecwb0-sunrise-hot-air-balloon-ride.html" target="_blank" rel="noopener noreferrer">Booking 热气球备选</a>
             </div>
           </article>
 
@@ -1169,6 +1384,10 @@
               <span class="source-type">本地运营商 + 备选平台</span>
             </header>
             <p>在 8 天里，最合理的“尼罗河游船”做法不是强行挤一晚 cruise，而是做 1 小时左右的 felucca 或短时 sunset cruise。</p>
+            <div class="card-tags">
+              <span class="meta-chip"><strong>适用日</strong> Day 6</span>
+              <span class="meta-chip"><strong>角色</strong> 主推活动</span>
+            </div>
             <ul>
               <li>为什么选：能满足“上尼罗河”这件事，又不会打乱卢克索到开罗的转场。</li>
               <li>预算口径：按 £10-£18 / 人预留，私包船会更高。</li>
@@ -1189,6 +1408,10 @@
               <span class="source-type">执行清单</span>
             </header>
             <p>这部分不是景点，但比“订哪家”更重要。尤其是你们有不会游泳的人，还要兼顾拍照和体力。</p>
+            <div class="card-tags">
+              <span class="meta-chip"><strong>适用日</strong> Day 2-6</span>
+              <span class="meta-chip"><strong>角色</strong> 必看清单</span>
+            </div>
             <ul>
               <li>确认是否含酒店接送，不然清晨补打车会很痛苦。</li>
               <li>确认可取消条件，特别是热气球和海上项目。</li>
