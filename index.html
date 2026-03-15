@@ -3,25 +3,27 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>埃及 8 天摄影友好行程｜中文版</title>
+    <title>埃及 8 天全覆盖行程｜可预订中文版</title>
     <meta
       name="description"
-      content="为四位中国护照旅客整理的埃及 8 天摄影友好行程中文版，兼顾手机和电脑阅读。"
+      content="面向四位中国护照旅客的埃及 8 天全覆盖中文行程页，含酒店、票务、活动预订来源、手机卡、天气和预算。"
     />
     <style>
       :root {
-        --bg: #f7f0e2;
-        --bg-soft: rgba(255, 252, 245, 0.78);
-        --paper: rgba(255, 250, 241, 0.95);
-        --paper-strong: #fffaf1;
-        --ink: #21343a;
-        --ink-soft: #496168;
-        --line: rgba(33, 52, 58, 0.12);
-        --brand: #0d6a71;
-        --brand-soft: rgba(13, 106, 113, 0.12);
-        --accent: #b85f37;
-        --accent-soft: rgba(184, 95, 55, 0.14);
-        --shadow: 0 18px 48px rgba(74, 54, 33, 0.12);
+        --bg: #f6efe2;
+        --paper: rgba(255, 250, 242, 0.96);
+        --paper-soft: rgba(255, 255, 255, 0.66);
+        --ink: #20353d;
+        --ink-soft: #54696f;
+        --brand: #0b6a70;
+        --brand-deep: #064f54;
+        --accent: #b56035;
+        --accent-soft: rgba(181, 96, 53, 0.12);
+        --line: rgba(32, 53, 61, 0.1);
+        --good: #1d7b4f;
+        --warn: #c17a11;
+        --high: #a63d2f;
+        --shadow: 0 18px 46px rgba(76, 58, 37, 0.12);
         --radius-xl: 28px;
         --radius-lg: 20px;
         --radius-md: 14px;
@@ -40,11 +42,11 @@
         margin: 0;
         color: var(--ink);
         background:
-          radial-gradient(circle at top left, rgba(255, 212, 147, 0.48), transparent 28%),
-          radial-gradient(circle at top right, rgba(116, 188, 191, 0.26), transparent 24%),
-          linear-gradient(180deg, #f8f2e8 0%, #f3ead8 48%, #efe4cf 100%);
+          radial-gradient(circle at top left, rgba(255, 210, 144, 0.55), transparent 26%),
+          radial-gradient(circle at top right, rgba(124, 190, 194, 0.24), transparent 22%),
+          linear-gradient(180deg, #f7f1e7 0%, #f1e7d6 52%, #eee0cb 100%);
         font:
-          16px/1.75 "Noto Sans SC", "PingFang SC", "Hiragino Sans GB",
+          16px/1.72 "Noto Sans SC", "PingFang SC", "Hiragino Sans GB",
           "Microsoft YaHei", sans-serif;
       }
 
@@ -52,22 +54,18 @@
         color: inherit;
       }
 
-      img {
-        max-width: 100%;
-      }
-
       .shell {
-        width: min(calc(100% - 32px), var(--max));
+        width: min(calc(100% - 28px), var(--max));
         margin: 0 auto;
       }
 
       .topbar {
         position: sticky;
         top: 0;
-        z-index: 10;
+        z-index: 20;
         backdrop-filter: blur(18px);
-        background: rgba(247, 240, 226, 0.72);
-        border-bottom: 1px solid rgba(33, 52, 58, 0.08);
+        background: rgba(246, 239, 226, 0.82);
+        border-bottom: 1px solid rgba(32, 53, 61, 0.08);
       }
 
       .topbar-inner {
@@ -92,55 +90,69 @@
         display: grid;
         place-items: center;
         border-radius: 12px;
-        background: linear-gradient(135deg, #0d6a71, #1f8f96);
+        background: linear-gradient(135deg, var(--brand), #1d8a91);
         color: white;
-        box-shadow: 0 10px 22px rgba(13, 106, 113, 0.28);
+        box-shadow: 0 10px 22px rgba(11, 106, 112, 0.25);
       }
 
       .anchor-list {
         display: flex;
-        gap: 10px;
         flex-wrap: wrap;
         justify-content: flex-end;
+        gap: 10px;
       }
 
       .anchor-list a {
         text-decoration: none;
         padding: 8px 12px;
         border-radius: 999px;
-        background: rgba(255, 255, 255, 0.5);
-        border: 1px solid rgba(33, 52, 58, 0.08);
-        color: var(--ink-soft);
         font-size: 14px;
+        color: var(--ink-soft);
+        background: rgba(255, 255, 255, 0.54);
+        border: 1px solid rgba(32, 53, 61, 0.08);
+      }
+
+      h1,
+      h2,
+      h3,
+      h4 {
+        margin: 0;
+        font-family: "Noto Serif SC", "Source Han Serif SC", "Songti SC", serif;
+        letter-spacing: 0.01em;
+      }
+
+      p {
+        margin: 0;
       }
 
       .hero {
-        padding: 42px 0 24px;
+        padding: 34px 0 18px;
       }
 
       .hero-grid {
         display: grid;
-        grid-template-columns: 1.25fr 0.95fr;
+        grid-template-columns: 1.3fr 0.92fr;
         gap: 24px;
-        align-items: stretch;
       }
 
+      .card,
       .hero-card,
-      .panel,
-      .section-card,
+      .side-card,
       .day-card,
-      .supply-card,
-      .budget-card,
       .hotel-card,
-      .tip-card {
+      .ticket-card,
+      .activity-card,
+      .info-card,
+      .budget-card,
+      .source-card {
         background: var(--paper);
-        border: 1px solid rgba(255, 255, 255, 0.48);
-        box-shadow: var(--shadow);
         border-radius: var(--radius-xl);
+        border: 1px solid rgba(255, 255, 255, 0.5);
+        box-shadow: var(--shadow);
       }
 
       .hero-card {
-        padding: 34px;
+        padding: 32px;
         position: relative;
         overflow: hidden;
       }
@@ -148,11 +160,12 @@
       .hero-card::after {
         content: "";
         position: absolute;
-        inset: auto -60px -60px auto;
+        right: -56px;
+        bottom: -52px;
         width: 220px;
         height: 220px;
         border-radius: 50%;
-        background: radial-gradient(circle, rgba(13, 106, 113, 0.18), transparent 65%);
+        background: radial-gradient(circle, rgba(11, 106, 112, 0.16), transparent 66%);
         pointer-events: none;
       }
 
@@ -162,54 +175,55 @@
         gap: 8px;
         padding: 8px 14px;
         border-radius: 999px;
-        background: var(--brand-soft);
+        background: rgba(11, 106, 112, 0.11);
         color: var(--brand);
+        font-size: 13px;
         font-weight: 700;
         letter-spacing: 0.04em;
-        font-size: 13px;
-        text-transform: uppercase;
-      }
-
-      h1,
-      h2,
-      h3 {
-        font-family: "Noto Serif SC", "Source Han Serif SC", "Songti SC", serif;
-        letter-spacing: 0.01em;
-        margin: 0;
       }
 
       h1 {
-        font-size: clamp(34px, 4vw, 54px);
-        line-height: 1.1;
         margin-top: 18px;
-        margin-bottom: 18px;
+        margin-bottom: 16px;
+        font-size: clamp(34px, 4.2vw, 56px);
+        line-height: 1.08;
       }
 
       .lead {
-        margin: 0;
+        max-width: 58ch;
         color: var(--ink-soft);
         font-size: 18px;
-        max-width: 58ch;
       }
 
-      .hero-tags {
-        margin-top: 22px;
+      .hero-tags,
+      .mini-tags,
+      .meta-list,
+      .badge-row {
         display: flex;
         flex-wrap: wrap;
         gap: 10px;
       }
 
-      .hero-tags span,
+      .hero-tags {
+        margin-top: 20px;
+      }
+
+      .mini-tag,
+      .meta-chip,
       .badge {
         display: inline-flex;
         align-items: center;
         gap: 8px;
         padding: 8px 12px;
         border-radius: 999px;
-        background: rgba(255, 255, 255, 0.72);
-        border: 1px solid rgba(33, 52, 58, 0.08);
+        background: var(--paper-soft);
+        border: 1px solid rgba(32, 53, 61, 0.08);
         color: var(--ink-soft);
         font-size: 14px;
+      }
+
+      .meta-chip strong {
+        color: var(--ink);
       }
 
       .side-stack {
@@ -217,45 +231,70 @@
         gap: 18px;
       }
 
-      .panel {
-        padding: 24px 24px 22px;
+      .side-card,
+      .card,
+      .day-card,
+      .hotel-card,
+      .ticket-card,
+      .activity-card,
+      .info-card,
+      .budget-card,
+      .source-card {
+        padding: 24px;
       }
 
-      .panel h2 {
+      .side-card h2,
+      .card h3,
+      .day-card h3,
+      .hotel-card h3,
+      .ticket-card h3,
+      .activity-card h3,
+      .info-card h3,
+      .budget-card h3,
+      .source-card h3 {
         font-size: 24px;
         margin-bottom: 12px;
       }
 
-      .panel p {
-        margin: 0;
+      .muted,
+      .card p,
+      .side-card p,
+      .hotel-card p,
+      .ticket-card p,
+      .activity-card p,
+      .info-card p,
+      .budget-card p,
+      .source-card p {
         color: var(--ink-soft);
       }
 
       .flight-list,
+      .plain-list,
       .check-list {
-        margin: 16px 0 0;
-        padding: 0;
         list-style: none;
+        padding: 0;
+        margin: 16px 0 0;
         display: grid;
         gap: 12px;
       }
 
       .flight-list li,
+      .plain-list li,
       .check-list li {
         padding: 14px 16px;
         border-radius: 18px;
         background: rgba(255, 255, 255, 0.64);
-        border: 1px solid rgba(33, 52, 58, 0.08);
+        border: 1px solid rgba(32, 53, 61, 0.08);
       }
 
       .flight-title {
         display: block;
-        font-weight: 700;
         margin-bottom: 4px;
+        font-weight: 700;
       }
 
       section {
-        padding: 16px 0;
+        padding: 18px 0;
       }
 
       .section-head {
@@ -267,131 +306,66 @@
       }
 
       .section-head h2 {
-        font-size: clamp(28px, 3.2vw, 38px);
+        font-size: clamp(28px, 3vw, 40px);
       }
 
       .section-head p {
-        margin: 0;
-        max-width: 44ch;
+        max-width: 46ch;
         color: var(--ink-soft);
       }
 
-      .summary-grid,
-      .hotel-grid,
-      .supply-grid,
-      .tip-grid,
-      .budget-grid {
+      .grid-2,
+      .grid-3,
+      .grid-4 {
         display: grid;
-        grid-template-columns: repeat(2, minmax(0, 1fr));
         gap: 18px;
       }
 
-      .section-card {
-        padding: 24px;
+      .grid-2 {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
       }
 
-      .section-card h3,
-      .hotel-card h3,
-      .supply-card h3,
-      .budget-card h3,
-      .tip-card h3 {
-        font-size: 22px;
-        margin-bottom: 12px;
+      .grid-3 {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
       }
 
-      .section-card p,
-      .hotel-card p,
-      .supply-card p,
-      .budget-card p,
-      .tip-card p {
-        margin: 0;
-        color: var(--ink-soft);
-      }
-
-      .route-flow {
-        display: grid;
-        grid-template-columns: repeat(5, minmax(0, 1fr));
-        gap: 16px;
-      }
-
-      .flow-step {
-        position: relative;
-        padding: 20px 16px;
-        background: linear-gradient(180deg, rgba(255, 255, 255, 0.82), rgba(255, 248, 237, 0.96));
-        border-radius: 22px;
-        border: 1px solid rgba(33, 52, 58, 0.08);
-        min-height: 150px;
-      }
-
-      .flow-step:not(:last-child)::after {
-        content: "→";
-        position: absolute;
-        right: -14px;
-        top: 50%;
-        transform: translateY(-50%);
-        color: var(--accent);
-        font-size: 28px;
-        font-weight: 700;
-      }
-
-      .flow-step strong {
-        display: block;
-        margin-bottom: 8px;
-        font-size: 18px;
-      }
-
-      .subtle {
-        color: var(--ink-soft);
+      .grid-4 {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
       }
 
       .callout {
         margin-top: 18px;
         padding: 18px 20px;
-        border-radius: 20px;
-        background: linear-gradient(135deg, rgba(13, 106, 113, 0.1), rgba(184, 95, 55, 0.08));
-        border: 1px solid rgba(13, 106, 113, 0.12);
-        color: var(--ink);
+        border-radius: 22px;
+        background: linear-gradient(135deg, rgba(11, 106, 112, 0.1), rgba(181, 96, 53, 0.08));
+        border: 1px solid rgba(11, 106, 112, 0.12);
       }
 
       .callout strong {
         color: var(--brand);
       }
 
-      .toggle-row {
-        display: flex;
-        gap: 12px;
-        flex-wrap: wrap;
-        margin-bottom: 20px;
-      }
-
-      .toggle-row button {
-        border: 0;
-        padding: 12px 18px;
+      .risk {
+        font-size: 13px;
+        font-weight: 700;
+        padding: 6px 10px;
         border-radius: 999px;
-        background: rgba(255, 255, 255, 0.72);
-        color: var(--ink-soft);
-        font: inherit;
-        cursor: pointer;
-        border: 1px solid rgba(33, 52, 58, 0.08);
-        transition:
-          transform 160ms ease,
-          background 160ms ease,
-          color 160ms ease;
+        white-space: nowrap;
       }
 
-      .toggle-row button.active {
-        background: linear-gradient(135deg, #0d6a71, #197e86);
-        color: white;
-        transform: translateY(-1px);
-        box-shadow: 0 10px 24px rgba(13, 106, 113, 0.24);
+      .risk-low {
+        color: var(--good);
+        background: rgba(29, 123, 79, 0.12);
       }
 
-      .variant-panel {
-        display: none;
+      .risk-mid {
+        color: var(--warn);
+        background: rgba(193, 122, 17, 0.14);
       }
 
-      .variant-panel.active {
-        display: block;
+      .risk-high {
+        color: var(--high);
+        background: rgba(166, 61, 47, 0.12);
       }
 
       .day-grid {
@@ -400,61 +374,77 @@
         gap: 18px;
       }
 
-      .day-card {
-        padding: 24px;
-      }
-
-      .day-card header {
+      .day-card header,
+      .ticket-card header,
+      .activity-card header,
+      .hotel-card header {
         display: flex;
         align-items: start;
         justify-content: space-between;
-        gap: 14px;
-        margin-bottom: 14px;
-      }
-
-      .day-card h3 {
-        font-size: 24px;
-        margin-bottom: 4px;
+        gap: 12px;
+        margin-bottom: 12px;
       }
 
       .day-card ul,
-      .section-card ul,
-      .supply-card ul,
-      .tip-card ul {
+      .ticket-card ul,
+      .activity-card ul,
+      .hotel-card ul,
+      .info-card ul,
+      .budget-card ul {
         margin: 14px 0 0;
         padding-left: 1.2em;
         color: var(--ink-soft);
       }
 
       .day-card li + li,
-      .section-card li + li,
-      .supply-card li + li,
-      .tip-card li + li {
+      .ticket-card li + li,
+      .activity-card li + li,
+      .hotel-card li + li,
+      .info-card li + li,
+      .budget-card li + li {
         margin-top: 8px;
       }
 
-      .tag-emphasis {
-        padding: 6px 10px;
-        border-radius: 999px;
-        background: var(--accent-soft);
-        color: var(--accent);
-        font-size: 13px;
+      .button-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-top: 16px;
+      }
+
+      .button-link {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        padding: 11px 14px;
+        border-radius: 12px;
+        text-decoration: none;
         font-weight: 700;
-        white-space: nowrap;
+        font-size: 14px;
+        color: white;
+        background: linear-gradient(135deg, var(--brand), #198088);
+        box-shadow: 0 10px 22px rgba(11, 106, 112, 0.22);
+      }
+
+      .button-link.secondary {
+        color: var(--brand-deep);
+        background: rgba(11, 106, 112, 0.1);
+        box-shadow: none;
       }
 
       .table-wrap {
         overflow-x: auto;
-        border-radius: 22px;
-        border: 1px solid rgba(33, 52, 58, 0.08);
+        border-radius: 24px;
+        border: 1px solid rgba(32, 53, 61, 0.08);
         background: rgba(255, 251, 245, 0.88);
         box-shadow: var(--shadow);
       }
 
       table {
         width: 100%;
+        min-width: 820px;
         border-collapse: collapse;
-        min-width: 760px;
       }
 
       th,
@@ -466,78 +456,58 @@
       }
 
       th {
-        background: rgba(13, 106, 113, 0.08);
-        color: var(--brand);
-        font-weight: 700;
         font-size: 14px;
+        color: var(--brand);
+        background: rgba(11, 106, 112, 0.08);
       }
 
       tr:last-child td {
         border-bottom: 0;
       }
 
-      .supply-card,
-      .hotel-card,
-      .budget-card,
-      .tip-card {
-        padding: 24px;
+      .source-type {
+        font-size: 12px;
+        font-weight: 700;
+        padding: 6px 10px;
+        border-radius: 999px;
+        background: rgba(32, 53, 61, 0.08);
+        color: var(--ink-soft);
       }
 
-      .hotel-card .badge,
-      .supply-card .badge,
-      .budget-card .badge {
-        margin-bottom: 12px;
-      }
-
-      .footnote {
-        margin-top: 26px;
+      .footer-note {
+        margin-top: 24px;
         padding: 18px 20px;
         border-radius: 20px;
-        background: rgba(33, 52, 58, 0.05);
+        background: rgba(32, 53, 61, 0.06);
         color: var(--ink-soft);
       }
 
       footer {
-        padding: 20px 0 48px;
+        padding: 10px 0 48px;
       }
 
       .footer-card {
         padding: 22px 24px;
         border-radius: 24px;
-        background: rgba(33, 52, 58, 0.92);
-        color: rgba(255, 255, 255, 0.86);
+        background: rgba(32, 53, 61, 0.94);
+        color: rgba(255, 255, 255, 0.9);
       }
 
       .footer-card strong {
         color: #fff;
       }
 
-      @media (max-width: 980px) {
+      @media (max-width: 1020px) {
         .hero-grid,
-        .summary-grid,
-        .hotel-grid,
-        .supply-grid,
-        .tip-grid,
-        .budget-grid,
+        .grid-2,
+        .grid-3,
+        .grid-4,
         .day-grid {
           grid-template-columns: 1fr;
         }
-
-        .route-flow {
-          grid-template-columns: 1fr;
-        }
-
-        .flow-step:not(:last-child)::after {
-          content: "↓";
-          left: 50%;
-          right: auto;
-          top: auto;
-          bottom: -24px;
-          transform: translateX(-50%);
-        }
       }
 
-      @media (max-width: 720px) {
+      @media (max-width: 760px) {
         body {
           font-size: 15px;
         }
@@ -548,7 +518,10 @@
 
         .topbar-inner,
         .section-head,
-        .day-card header {
+        .day-card header,
+        .ticket-card header,
+        .activity-card header,
+        .hotel-card header {
           display: block;
         }
 
@@ -557,30 +530,18 @@
           margin-top: 12px;
         }
 
-        .hero {
-          padding-top: 24px;
-        }
-
         .hero-card,
-        .panel,
-        .section-card,
+        .side-card,
+        .card,
         .day-card,
-        .supply-card,
-        .budget-card,
         .hotel-card,
-        .tip-card {
-          border-radius: 22px;
-        }
-
-        .hero-card,
-        .panel,
-        .section-card,
-        .day-card,
-        .supply-card,
+        .ticket-card,
+        .activity-card,
+        .info-card,
         .budget-card,
-        .hotel-card,
-        .tip-card {
+        .source-card {
           padding: 20px;
+          border-radius: 22px;
         }
 
         h1 {
@@ -593,7 +554,7 @@
 
         th,
         td {
-          padding: 14px 14px;
+          padding: 14px;
         }
       }
     </style>
@@ -603,15 +564,17 @@
       <div class="shell topbar-inner">
         <div class="brand">
           <span class="brand-mark">埃</span>
-          <span>埃及 8 天行程中文版</span>
+          <span>埃及 8 天全覆盖执行页</span>
         </div>
         <nav class="anchor-list" aria-label="页面导航">
           <a href="#overview">概览</a>
           <a href="#itinerary">行程</a>
-          <a href="#transport">交通</a>
-          <a href="#safety">安全</a>
-          <a href="#hotel">酒店预算</a>
-          <a href="#practical">签证准备</a>
+          <a href="#tickets">官方票务</a>
+          <a href="#hotels">具体酒店</a>
+          <a href="#activities">活动预订</a>
+          <a href="#sim">手机卡</a>
+          <a href="#weather">天气</a>
+          <a href="#budget">预算</a>
         </nav>
       </div>
     </header>
@@ -620,45 +583,52 @@
       <section class="hero" id="overview">
         <div class="hero-grid">
           <article class="hero-card">
-            <span class="eyebrow">Photo-first Egypt · 中文整理版</span>
-            <h1>适合四位中国护照旅客的<br />埃及 8 天摄影友好路线</h1>
+            <span class="eyebrow">Latest update · 2026-03-15</span>
+            <h1>适合 4 位成人的埃及 8 天全覆盖行程<br />中文版执行页</h1>
             <p class="lead">
-              这是一份把原始英文研究报告完整整理成中文的单页网页版本，路线从红海出发，经卢克索，最后落在开罗，既照顾拍照效果，也尽量减少折返和折腾。
+              这版不是单纯“看起来好看”的攻略页，而是按“现在就能去订”的标准重做：主方案尽量覆盖你点名的全部景点和体验，同时把酒店、官方票务入口、活动预订来源、手机卡、气温、行李和预算一起补全。
             </p>
             <div class="hero-tags">
-              <span>23 Apr 2026 - 30 Apr 2026</span>
-              <span>4 位成人</span>
-              <span>手机电脑都能顺畅阅读</span>
-              <span>推荐方案：B 轻松版</span>
+              <span class="mini-tag">固定日期：2026-04-23 至 2026-04-30</span>
+              <span class="mini-tag">默认行李：easyJet 2 × 23kg</span>
+              <span class="mini-tag">主方案：尽量全覆盖</span>
+              <span class="mini-tag">页内链接均为 2026-03-15 核对口径</span>
+            </div>
+            <div class="callout">
+              <strong>一句话结论：</strong>
+              你列的点位理论上可以尽量都塞进 8 天里，但只有在
+              <strong>Day 7 非常赶、Day 8 时间卡得紧、并且所有票务与转运都提前订好</strong>
+              的前提下才顺。页面里我把“能做到”和“会很累”同时写清楚了。
             </div>
           </article>
 
           <div class="side-stack">
-            <article class="panel">
-              <h2>固定航班</h2>
+            <article class="side-card">
+              <h2>固定航班与已知口径</h2>
               <ul class="flight-list">
                 <li>
                   <span class="flight-title">去程：Bristol → Hurghada</span>
-                  easyJet，2026 年 4 月 23 日 13:55 起飞，20:30 抵达赫尔格达。
+                  easyJet，2026-04-23 13:55 起飞，20:30 抵达赫尔格达。
                 </li>
                 <li>
                   <span class="flight-title">回程：Cairo → Heathrow</span>
-                  EgyptAir，2026 年 4 月 30 日 17:40 起飞，20:55 抵达伦敦希思罗。
+                  EgyptAir，2026-04-30 17:40 起飞，20:55 抵达伦敦希思罗。
+                </li>
+                <li>
+                  <span class="flight-title">行李默认写法</span>
+                  按 easyJet 官方口径，已按 2 件标准托运行李处理，每件 23kg，总共 46kg，可在同一预订下做重量池化。
                 </li>
               </ul>
             </article>
 
-            <article class="panel">
-              <h2>一句话建议</h2>
-              <p>
-                如果你们想兼顾拍照、舒适和执行难度，优先选
-                <strong>方案 B：轻松版</strong>。它保留红海、沙漠、热气球、帝王谷、金字塔和大埃及博物馆这些核心亮点，同时把亚历山大改成可选项，整体更从容。
-              </p>
-              <div class="callout">
-                <strong>时间提醒：</strong>埃及在
-                <strong>2026 年 4 月 24 日</strong>
-                切换夏令时，时钟会拨快 1 小时。热气球、沙漠团和早晨接送一定要在前一晚再确认。
-              </div>
+            <article class="side-card">
+              <h2>这页怎么用</h2>
+              <ul class="check-list">
+                <li>先看第 1 部分的 8 天主行程，确认你们能接受 Day 7 的强度。</li>
+                <li>酒店区我按“更省预算型优先”排，另给了更稳妥的备选。</li>
+                <li>景点区全部放官方票务入口，活动区放运营方直链或可执行的主渠道入口。</li>
+                <li>预算区分成“在地预算”和“含已购国际机票占位的总预算”。</li>
+              </ul>
             </article>
           </div>
         </div>
@@ -667,699 +637,909 @@
       <section>
         <div class="section-head">
           <div>
-            <h2>整体判断</h2>
+            <h2>执行前先看</h2>
           </div>
-          <p>原报告的核心逻辑很清晰：先拍海，再拍古迹，最后用开罗收尾，路径顺，不容易来回折返。</p>
+          <p>这一段把真正会影响行程成败的硬条件先说清楚，避免只看到“全都能去”。</p>
         </div>
-        <div class="summary-grid">
-          <article class="section-card">
-            <h3>路线结构</h3>
+        <div class="grid-3">
+          <article class="card">
+            <h3>最关键的时间风险</h3>
             <p>
-              最顺的走法是
-              <strong>赫尔格达 → 卢克索 → 开罗</strong>。红海负责海景和沙漠光线，卢克索负责神庙与热气球日出，开罗负责金字塔、大埃及博物馆和伊斯兰建筑。
+              Day 7 要同时完成萨拉丁城堡、苏丹哈桑和亚历山大，只有在
+              <strong>开罗市区出发很早、去亚历山大走私家车或最快火车、并且不拖延</strong>
+              的情况下才可行。
             </p>
           </article>
-          <article class="section-card">
-            <h3>推荐交通骨架</h3>
+          <article class="card">
+            <h3>真正要提前订的 4 样</h3>
             <p>
-              最省心的组合是
-              <strong>赫尔格达到卢克索包车</strong>，
-              再用
-              <strong>卢克索飞开罗的国内航班</strong>。
-              这样只保留一段主要陆路移动，能明显降低折腾感。
+              大埃及博物馆、金字塔官方票、卢克索热气球、卢克索飞开罗的国内航班。其余如红海船日、沙漠观星、尼罗河短船可以稍后补，但最好出发前一周就锁定。
             </p>
           </article>
-          <article class="section-card">
-            <h3>适合你们的节奏</h3>
+          <article class="card">
+            <h3>天气和体力逻辑</h3>
             <p>
-              方案 A 能把亚历山大也塞进去，但开罗会明显变得很赶。方案 B 更适合“中等节奏、不要太累”的需求，也更适合出片和休息并行。
+              4 月底的卢克索已经偏热，真正最耗体力的是
+              <strong>热气球日</strong>
+              和
+              <strong>亚历山大往返日</strong>。
+              如果你们有任何人不适合连续早起，优先砍掉亚历山大。
             </p>
-          </article>
-          <article class="section-card">
-            <h3>安全底线</h3>
-            <p>
-              红海水上活动、卢克索热气球、沙漠四轮车都是需要额外注意的项目。最重要的不是“便宜”，而是选择靠谱供应商、确认安全说明、准备覆盖相关活动的保险。
-            </p>
-          </article>
-        </div>
-      </section>
-
-      <section>
-        <div class="section-head">
-          <div>
-            <h2>路线逻辑</h2>
-          </div>
-          <p>下面这条动线基本就是原研究报告认为最顺手、最容易执行的版本。</p>
-        </div>
-        <div class="route-flow">
-          <article class="flow-step">
-            <strong>Day 1</strong>
-            赫尔格达晚间落地，先入住休息，把第一晚完全留给恢复状态。
-          </article>
-          <article class="flow-step">
-            <strong>Day 2-3</strong>
-            红海船日和沙漠落日观星放在前面，既轻松，也容易拍到“度假感”照片。
-          </article>
-          <article class="flow-step">
-            <strong>Day 4-6</strong>
-            包车进卢克索，安排神庙、热气球、帝王谷和短时尼罗河日落船。
-          </article>
-          <article class="flow-step">
-            <strong>Day 6</strong>
-            飞到开罗，避免一整天的地面长途移动，把精力留给最后两天。
-          </article>
-          <article class="flow-step">
-            <strong>Day 7-8</strong>
-            集中完成金字塔、大埃及博物馆、城堡与清真寺；亚历山大只作为可选加项。
           </article>
         </div>
         <div class="callout">
-          <strong>核心假设：</strong>这是一个
-          <strong>8 天 7 晚</strong>
-          的行程，适合用“提前订票 + 一次主要陆路转移 + 一次国内航班”的思路来压缩不必要的排队和中转。
+          <strong>夏令时提醒：</strong>
+          埃及在 2026 年 4 月 24 日切换夏令时。热气球、沙漠团和凌晨接送都要以前一晚运营方消息为准，不要只看最初订单上的时间。
         </div>
       </section>
 
       <section id="itinerary">
         <div class="section-head">
           <div>
-            <h2>两套中文行程</h2>
+            <h2>8 天主方案：尽量全覆盖</h2>
           </div>
-          <p>我把英文报告里的 A / B 两套方案完整改成了中文。默认先展示更推荐的轻松版。</p>
+          <p>主方案把你点的景点和体验都尽量放进去了，并在每一天标出“风险等级”和可替换项。</p>
         </div>
-        <div class="toggle-row" role="tablist" aria-label="行程版本切换">
-          <button class="active" type="button" data-tab="variant-b" aria-selected="true">方案 B：轻松版</button>
-          <button type="button" data-tab="variant-a" aria-selected="false">方案 A：全景点版</button>
-        </div>
+        <div class="day-grid">
+          <article class="day-card">
+            <header>
+              <div>
+                <h3>Day 1｜4 月 23 日 周四</h3>
+                <p class="muted">抵达赫尔格达，入住休整</p>
+              </div>
+              <span class="risk risk-low">强度低</span>
+            </header>
+            <ul>
+              <li>20:30 落地赫尔格达，建议直接入住，不安排任何景点。</li>
+              <li>如果住 Marina 或机场东侧，第二天参加出海活动接送更顺。</li>
+              <li>今晚只做 3 件事：换少量现金、确认次日接送、早点睡。</li>
+            </ul>
+          </article>
 
-        <div class="variant-panel active" id="variant-b" data-panel="variant-b">
-          <div class="day-grid">
-            <article class="day-card">
-              <header>
-                <div>
-                  <h3>Day 1｜4 月 23 日 周四</h3>
-                  <p class="subtle">抵达赫尔格达，入住休整</p>
-                </div>
-                <span class="tag-emphasis">轻松开场</span>
-              </header>
-              <ul>
-                <li>20:30 落地赫尔格达。</li>
-                <li>约 21:30 至 22:30 完成接机、入住和简单晚餐。</li>
-                <li>这一晚不安排任何景点，优先睡好，给后面两天留体力。</li>
-              </ul>
-            </article>
+          <article class="day-card">
+            <header>
+              <div>
+                <h3>Day 2｜4 月 24 日 周五</h3>
+                <p class="muted">赫尔格达出海日</p>
+              </div>
+              <span class="risk risk-mid">强度中</span>
+            </header>
+            <ul>
+              <li>08:00 至 16:00 做红海船日。会游泳的人可浮潜，不会游泳的人直接选半潜艇或玻璃观景方案。</li>
+              <li>傍晚去 Marina 区补人像和海边散步照片。</li>
+              <li>如果你们怕晒，这一天一定把海上项目放最早，不要拖到中午后再出发。</li>
+            </ul>
+          </article>
 
-            <article class="day-card">
-              <header>
-                <div>
-                  <h3>Day 2｜4 月 24 日 周五</h3>
-                  <p class="subtle">红海船日</p>
-                </div>
-                <span class="tag-emphasis">海景大片</span>
-              </header>
-              <ul>
-                <li>08:30 至 15:30 安排红海船上活动，可浮潜，也可以只在船上观景拍照。</li>
-                <li>不会游泳的人建议全程穿救生衣，或者改选半潜艇 / 海底观景类项目。</li>
-                <li>选择有清晰安全说明的供应商，登船后确认救生衣、急救设备和安全 briefing。</li>
-              </ul>
-            </article>
+          <article class="day-card">
+            <header>
+              <div>
+                <h3>Day 3｜4 月 25 日 周六</h3>
+                <p class="muted">冲沙 + 观星</p>
+              </div>
+              <span class="risk risk-mid">强度中</span>
+            </header>
+            <ul>
+              <li>白天休息，下午 15:30 后进沙漠做 Jeep 冲沙、落日、晚餐和观星。</li>
+              <li>这天尽量不要把重点放在四轮车，选 Jeep 主体线路更稳。</li>
+              <li>若行程里有 quad bike，必须戴头盔；不然宁可不骑。</li>
+            </ul>
+          </article>
 
-            <article class="day-card">
-              <header>
-                <div>
-                  <h3>Day 3｜4 月 25 日 周六</h3>
-                  <p class="subtle">慢早晨 + 沙漠落日观星</p>
-                </div>
-                <span class="tag-emphasis">沙漠氛围</span>
-              </header>
-              <ul>
-                <li>10:00 至 15:00 慢节奏休息，可在酒店泳池、海边放松，顺便修图。</li>
-                <li>15:30 至 21:30 参加越野车进沙漠、落日拍摄和望远镜观星活动。</li>
-                <li>如果行程里混入四轮车项目，必须戴头盔；更建议选以 Jeep 为主的线路。</li>
-              </ul>
-            </article>
+          <article class="day-card">
+            <header>
+              <div>
+                <h3>Day 4｜4 月 26 日 周日</h3>
+                <p class="muted">赫尔格达 → 卢克索</p>
+              </div>
+              <span class="risk risk-mid">强度中</span>
+            </header>
+            <ul>
+              <li>10:00 左右包车离开赫尔格达，约 14:00 至 14:30 到卢克索。</li>
+              <li>傍晚安排卢克索神庙，黄昏到夜景最值得拍。</li>
+              <li>今晚要早休息，因为第二天是全程最早起的一天。</li>
+            </ul>
+          </article>
 
-            <article class="day-card">
-              <header>
-                <div>
-                  <h3>Day 4｜4 月 26 日 周日</h3>
-                  <p class="subtle">赫尔格达到卢克索</p>
-                </div>
-                <span class="tag-emphasis">古迹切换</span>
-              </header>
-              <ul>
-                <li>10:00 至 14:30 包车从赫尔格达前往卢克索，通常约 3 小时 45 分到 4 小时。</li>
-                <li>下午稍作休整后，16:30 至 19:30 去卢克索神庙拍黄昏和夜景。</li>
-                <li>卢克索神庙傍晚出片很好，适合作为进入古埃及段落的第一站。</li>
-              </ul>
-            </article>
+          <article class="day-card">
+            <header>
+              <div>
+                <h3>Day 5｜4 月 27 日 周一</h3>
+                <p class="muted">热气球 + 帝王谷 + 卡纳克</p>
+              </div>
+              <span class="risk risk-high">强度高</span>
+            </header>
+            <ul>
+              <li>04:00 前后接走参加热气球，风况不好时要接受临时取消。</li>
+              <li>落地后直奔帝王谷，越早越凉快，也更适合拍照。</li>
+              <li>下午进卡纳克神庙，不建议再额外塞太多西岸景点，不然会疲劳过头。</li>
+            </ul>
+          </article>
 
-            <article class="day-card">
-              <header>
-                <div>
-                  <h3>Day 5｜4 月 27 日 周一</h3>
-                  <p class="subtle">热气球 + 帝王谷 + 卡纳克</p>
-                </div>
-                <span class="tag-emphasis">重头戏</span>
-              </header>
-              <ul>
-                <li>04:00 至 08:30 参加卢克索热气球，日出飞行时间会受风况和夏令时影响。</li>
-                <li>10:00 至 14:00 参观帝王谷，尽量早进场，避开高温和更多游客。</li>
-                <li>16:00 至 18:30 去卡纳克神庙，适合拍柱廊和斜阳。</li>
-                <li>热气球必须选口碑稳定的供应商，并接受天气取消的可能性。</li>
-              </ul>
-            </article>
+          <article class="day-card">
+            <header>
+              <div>
+                <h3>Day 6｜4 月 28 日 周二</h3>
+                <p class="muted">尼罗河短船 + 飞开罗</p>
+              </div>
+              <span class="risk risk-mid">强度中</span>
+            </header>
+            <ul>
+              <li>上午留给休息、洗衣、补觉，或者补拍卢克索街景。</li>
+              <li>傍晚前安排 1 小时左右的尼罗河 felucca / 短时帆船，完成“尼罗河游船”体验。</li>
+              <li>之后飞开罗，最好住市中心，这样 Day 7 和 Day 8 衔接更合理。</li>
+            </ul>
+          </article>
 
-            <article class="day-card">
-              <header>
-                <div>
-                  <h3>Day 6｜4 月 28 日 周二</h3>
-                  <p class="subtle">尼罗河短船 + 飞开罗</p>
-                </div>
-                <span class="tag-emphasis">收束卢克索</span>
-              </header>
-              <ul>
-                <li>上午可以放松，也可以补拍酒店、河岸或前一天没拍够的内容。</li>
-                <li>16:30 至 18:00 做一段短时尼罗河日落船，满足“想体验尼罗河”的愿望。</li>
-                <li>18:00 至 22:30 飞往开罗并入住，或把航班提前一些，换来更松弛的晚上。</li>
-              </ul>
-            </article>
+          <article class="day-card">
+            <header>
+              <div>
+                <h3>Day 7｜4 月 29 日 周三</h3>
+                <p class="muted">萨拉丁城堡 + 苏丹哈桑 + 亚历山大</p>
+              </div>
+              <span class="risk risk-high">强度很高</span>
+            </header>
+            <ul>
+              <li>08:00 先看萨拉丁城堡，9:30 左右转去苏丹哈桑清真寺。</li>
+              <li>11:15 前后离开开罗去亚历山大，优先用私家车，时间最可控。</li>
+              <li>14:00 至 17:00 做凯特贝城堡 + Corniche 海边，看地中海。</li>
+              <li>晚上回开罗。这一天真正的风险不是景点，而是往返交通和体力。</li>
+            </ul>
+          </article>
 
-            <article class="day-card">
-              <header>
-                <div>
-                  <h3>Day 7｜4 月 29 日 周三</h3>
-                  <p class="subtle">吉萨金字塔 + 大埃及博物馆</p>
-                </div>
-                <span class="tag-emphasis">开罗核心日</span>
-              </header>
-              <ul>
-                <li>07:00 至 10:30 一早进入吉萨高地，优先拍清晨光线下的金字塔。</li>
-                <li>13:00 至 16:00 安排大埃及博物馆，最好提前订好时段票。</li>
-                <li>晚上 19:00 至 21:00 可灵活安排夜景、老城区散步或集市拍照。</li>
-              </ul>
-            </article>
-
-            <article class="day-card">
-              <header>
-                <div>
-                  <h3>Day 8｜4 月 30 日 周四</h3>
-                  <p class="subtle">伊斯兰开罗 + 返程</p>
-                </div>
-                <span class="tag-emphasis">收尾不赶</span>
-              </header>
-              <ul>
-                <li>09:00 至 11:00 参观开罗城堡。</li>
-                <li>11:30 至 12:45 参观苏丹哈桑清真寺-经学院。</li>
-                <li>14:40 左右到达机场，给 17:40 的国际航班留足缓冲时间。</li>
-              </ul>
-            </article>
-          </div>
-          <div class="callout">
-            <strong>轻松版取舍：</strong>把亚历山大从“必须去”改成“可换入”，换来的好处是开罗不会被压缩得太厉害，也能保住你们在卢克索和金字塔的拍照体验。
-          </div>
+          <article class="day-card">
+            <header>
+              <div>
+                <h3>Day 8｜4 月 30 日 周四</h3>
+                <p class="muted">金字塔 + GEM + 机场</p>
+              </div>
+              <span class="risk risk-high">强度高</span>
+            </header>
+            <ul>
+              <li>07:00 进吉萨金字塔群，一早光线最好，也最容易压缩人流。</li>
+              <li>中午转去大埃及博物馆，建议直接订早中段 admission ticket。</li>
+              <li>14:40 前后离开前往机场，17:40 搭 EgyptAir 回程。</li>
+            </ul>
+          </article>
         </div>
 
-        <div class="variant-panel" id="variant-a" data-panel="variant-a">
-          <div class="day-grid">
-            <article class="day-card">
-              <header>
-                <div>
-                  <h3>Day 1｜4 月 23 日 周四</h3>
-                  <p class="subtle">抵达赫尔格达，入住休整</p>
-                </div>
-                <span class="tag-emphasis">基础日</span>
-              </header>
-              <ul>
-                <li>20:30 落地，21:30 至 22:30 办理入住。</li>
-                <li>轻食 + 早点睡，为第二天海上活动准备体力。</li>
-              </ul>
-            </article>
-
-            <article class="day-card">
-              <header>
-                <div>
-                  <h3>Day 2｜4 月 24 日 周五</h3>
-                  <p class="subtle">红海“主视觉”拍摄日</p>
-                </div>
-                <span class="tag-emphasis">海景重点</span>
-              </header>
-              <ul>
-                <li>08:00 至 16:00 红海船日，可浮潜，也可在甲板拍海和人像。</li>
-                <li>17:30 至 19:30 去码头或 Marina 区拍黄金时刻和傍晚人像。</li>
-                <li>务必选择靠谱船公司，并要求完整安全说明。</li>
-              </ul>
-            </article>
-
-            <article class="day-card">
-              <header>
-                <div>
-                  <h3>Day 3｜4 月 25 日 周六</h3>
-                  <p class="subtle">沙漠落日与观星</p>
-                </div>
-                <span class="tag-emphasis">星空夜色</span>
-              </header>
-              <ul>
-                <li>上午慢节奏休息，可以海边、泳池、修图。</li>
-                <li>15:30 至 21:30 参加 Jeep 沙漠团、落日拍摄和望远镜观星。</li>
-                <li>尽量避免把重点放在四轮车上，若参加必须全程戴头盔。</li>
-              </ul>
-            </article>
-
-            <article class="day-card">
-              <header>
-                <div>
-                  <h3>Day 4｜4 月 26 日 周日</h3>
-                  <p class="subtle">转场卢克索 + 夜色神庙</p>
-                </div>
-                <span class="tag-emphasis">路程控制</span>
-              </header>
-              <ul>
-                <li>10:00 至 14:30 包车前往卢克索。</li>
-                <li>16:30 至 19:30 去卢克索神庙拍黄昏。</li>
-                <li>这一天强度不算大，但要注意体力恢复，为次日热气球做准备。</li>
-              </ul>
-            </article>
-
-            <article class="day-card">
-              <header>
-                <div>
-                  <h3>Day 5｜4 月 27 日 周一</h3>
-                  <p class="subtle">热气球 + 西岸重头景点</p>
-                </div>
-                <span class="tag-emphasis">高强度</span>
-              </header>
-              <ul>
-                <li>04:00 至 08:30 热气球。</li>
-                <li>09:30 至 13:30 帝王谷及西岸重点景点。</li>
-                <li>16:00 至 18:30 卡纳克神庙。</li>
-                <li>这是全行程里最累的一天之一，适合想尽可能多拍的人。</li>
-              </ul>
-            </article>
-
-            <article class="day-card">
-              <header>
-                <div>
-                  <h3>Day 6｜4 月 28 日 周二</h3>
-                  <p class="subtle">飞开罗 + 夜间城市氛围</p>
-                </div>
-                <span class="tag-emphasis">进入都市段</span>
-              </header>
-              <ul>
-                <li>上午放松或补拍卢克索内容。</li>
-                <li>12:00 至 16:00 飞往开罗，包含往返机场和入住时间。</li>
-                <li>18:00 至 21:00 可安排开罗夜景、咖啡馆或观景点。</li>
-              </ul>
-            </article>
-
-            <article class="day-card">
-              <header>
-                <div>
-                  <h3>Day 7｜4 月 29 日 周三</h3>
-                  <p class="subtle">亚历山大一日往返</p>
-                </div>
-                <span class="tag-emphasis">时间最紧</span>
-              </header>
-              <ul>
-                <li>06:30 至 08:30 从开罗前往亚历山大。</li>
-                <li>10:00 至 13:00 拍海岸线、港口、地中海海边城市风格。</li>
-                <li>14:00 至 16:00 可重点看凯特贝城堡等地标。</li>
-                <li>18:30 至 20:30 返回开罗，建议早点休息。</li>
-              </ul>
-            </article>
-
-            <article class="day-card">
-              <header>
-                <div>
-                  <h3>Day 8｜4 月 30 日 周四</h3>
-                  <p class="subtle">吉萨 + 大埃及博物馆 + 机场</p>
-                </div>
-                <span class="tag-emphasis">高压收尾</span>
-              </header>
-              <ul>
-                <li>07:00 至 10:00 进入吉萨高地拍金字塔。</li>
-                <li>12:30 至 15:00 参观大埃及博物馆。</li>
-                <li>随后立刻前往机场，时间卡得较紧，容错空间不大。</li>
-              </ul>
-            </article>
-          </div>
-          <div class="callout">
-            <strong>全景点版取舍：</strong>你们能把亚历山大也纳入，但开罗会变得偏“打卡式”，伊斯兰开罗基本只能浅尝辄止，更适合非常能早起、能赶行程的一组人。
-          </div>
+        <div class="callout">
+          <strong>更轻松的替代法：</strong>
+          如果最后确认 Day 7 太赶，把亚历山大整天拿掉，改成
+          <strong>开罗老城 + 萨拉丁城堡 + 苏丹哈桑 + 休息</strong>，
+          然后 Day 8 只做金字塔和 GEM。这个版本的体验通常比“硬塞全部”更好。
         </div>
       </section>
 
-      <section id="transport">
+      <section id="tickets">
         <div class="section-head">
           <div>
-            <h2>交通方案</h2>
+            <h2>景点官方票务入口矩阵</h2>
           </div>
-          <p>如果目标是“省心”，就尽量减少站点复杂度和连续长途地面移动。</p>
+          <p>以下优先用官方票务站。开放时段和价格按 2026-03-15 查到的公开口径整理，最终以下单页和现场公告为准。</p>
         </div>
         <div class="table-wrap">
           <table>
             <thead>
               <tr>
-                <th>路段</th>
-                <th>最省心方案</th>
-                <th>备选</th>
-                <th>典型耗时</th>
-                <th>适合 4 人小团的理由</th>
+                <th>景点</th>
+                <th>建议时段</th>
+                <th>外籍成人票</th>
+                <th>开放信息口径</th>
+                <th>是否建议提前订</th>
+                <th>官方入口</th>
               </tr>
             </thead>
             <tbody>
               <tr>
-                <td>赫尔格达 → 卢克索</td>
-                <td>包车或小型商务车，门到门</td>
-                <td>城际巴士</td>
-                <td>约 3 小时 45 分到 4 小时</td>
-                <td>4 人分摊后通常仍划算，而且省去车站、行李和时间的不确定性。</td>
+                <td>吉萨金字塔群</td>
+                <td>Day 8 07:00 起</td>
+                <td>EGP 700</td>
+                <td>官方页口径：夏季约 07:00 开，末次入场约 16:00</td>
+                <td>建议提前</td>
+                <td><a href="https://egymonuments.com/details/Pyramids" target="_blank" rel="noopener noreferrer">官方票务</a></td>
               </tr>
               <tr>
-                <td>卢克索 → 开罗</td>
-                <td>国内航班</td>
-                <td>卧铺火车、长途包车</td>
-                <td>飞行约 1 小时 10 分到 1 小时 15 分，外加机场时间</td>
-                <td>最能保住精力，适合想把状态留给最后两天景点的人。</td>
+                <td>大埃及博物馆 GEM</td>
+                <td>Day 8 中午</td>
+                <td>EGP 1,450</td>
+                <td>官方首页显示 last ticket purchase 5 PM；AdmissionTkt 为唯一官方购票入口</td>
+                <td>强烈建议提前</td>
+                <td><a href="https://visit-gem.com/en/AdmissionTkt" target="_blank" rel="noopener noreferrer">官方购票</a></td>
               </tr>
               <tr>
-                <td>开罗 ↔ 亚历山大</td>
-                <td>一日往返火车或包车</td>
-                <td>全程私家车</td>
-                <td>单程约 2.5 到 4 小时</td>
-                <td>这段本身就会吃掉一整天，所以只建议放在方案 A 或当作替换项。</td>
+                <td>帝王谷</td>
+                <td>Day 5 上午</td>
+                <td>EGP 750</td>
+                <td>官方页口径：夏季约 06:00 开，末次入场约 17:00</td>
+                <td>建议提前</td>
+                <td><a href="https://egymonuments.com/details/ValleyOfKings" target="_blank" rel="noopener noreferrer">官方票务</a></td>
               </tr>
               <tr>
-                <td>卢克索市内</td>
-                <td>酒店约车或正规出租车</td>
-                <td>公共摆渡船</td>
-                <td>通常 10 到 30 分钟一段</td>
-                <td>更可控、更省精力；若想拍“本地感”，可短暂体验尼罗河公共渡船，但注意保管财物。</td>
+                <td>卡纳克神庙</td>
+                <td>Day 5 下午</td>
+                <td>EGP 600</td>
+                <td>官方详情页可直接下单；执行上建议 16:00 前入场</td>
+                <td>可提前</td>
+                <td><a href="https://egymonuments.com/details/KarnakTemple" target="_blank" rel="noopener noreferrer">官方票务</a></td>
+              </tr>
+              <tr>
+                <td>卢克索神庙</td>
+                <td>Day 4 黄昏</td>
+                <td>EGP 500</td>
+                <td>官方详情页可下单；执行上建议傍晚至夜景段去</td>
+                <td>可提前</td>
+                <td><a href="https://egymonuments.com/details/LuxorTemple" target="_blank" rel="noopener noreferrer">官方票务</a></td>
+              </tr>
+              <tr>
+                <td>萨拉丁城堡</td>
+                <td>Day 7 早晨</td>
+                <td>EGP 550</td>
+                <td>官方详情页可下单；建议一开门就去，给亚历山大留路上时间</td>
+                <td>建议提前</td>
+                <td><a href="https://egymonuments.com/details/SalahEldinCitadel" target="_blank" rel="noopener noreferrer">官方票务</a></td>
+              </tr>
+              <tr>
+                <td>苏丹哈桑清真寺-经学院</td>
+                <td>Day 7 上午</td>
+                <td>EGP 220</td>
+                <td>官方详情页可下单；建议与城堡排在同一个上午</td>
+                <td>建议提前</td>
+                <td><a href="https://egymonuments.com/details/Mosque-MadrassaSultanHassan" target="_blank" rel="noopener noreferrer">官方票务</a></td>
+              </tr>
+              <tr>
+                <td>亚历山大凯特贝城堡</td>
+                <td>Day 7 下午</td>
+                <td>以官方页为准</td>
+                <td>亚历山大当日往返时，建议只保留一个核心点位，不再分散</td>
+                <td>可提前</td>
+                <td><a href="https://egymonuments.com/details/CitadelofQaitbay" target="_blank" rel="noopener noreferrer">官方票务</a></td>
               </tr>
             </tbody>
           </table>
         </div>
-        <div class="summary-grid" style="margin-top: 18px;">
-          <article class="section-card">
-            <h3>easyJet 行李提醒</h3>
+        <div class="footer-note">
+          核心文保景点按当前官方票价相加，约为
+          <strong>EGP 4,970 / 人</strong>，
+          按本页预算换算口径约为
+          <strong>£78 / 人</strong>。
+          如果你们额外加金字塔内部、特殊墓室或夜秀，要再单独加预算。
+        </div>
+      </section>
+
+      <section id="hotels">
+        <div class="section-head">
+          <div>
+            <h2>具体酒店：预算优先 + 更稳备选</h2>
+          </div>
+          <p>不是只给酒店名字，而是给到“为什么住这里、适合哪一晚、怎么分房、在哪里订”。</p>
+        </div>
+        <div class="grid-2">
+          <article class="hotel-card">
+            <header>
+              <div>
+                <span class="badge">赫尔格达｜更省预算型</span>
+                <h3>AJIRA Boutique Hotel Hurghada Marina</h3>
+              </div>
+              <span class="source-type">酒店官网 + Booking</span>
+            </header>
+            <p>
+              适合 Day 1-3。位置靠 Marina，晚上吃饭散步方便，做船日接送也顺。更适合想把住宿预算压下来的组合。
+            </p>
             <ul>
-              <li>基础随身包通常为每人 1 件小包，尺寸约 45 × 36 × 20 cm。</li>
-              <li>标准托运行李通常为每件 23 kg，同一订单下常可做重量池化。</li>
+              <li>房型建议：2 间 twin 或 2 间 standard room，提前备注分性别。</li>
+              <li>适合原因：海边活动方便、第一晚不需要再折腾远距离通勤。</li>
+              <li>执行预算：按 £40-£65 / twin room / 晚做预留更稳。</li>
             </ul>
+            <div class="button-row">
+              <a class="button-link" href="https://ajirahotels.com/ajira-boutique-hotel-hurghada-marina" target="_blank" rel="noopener noreferrer">酒店官网</a>
+              <a class="button-link secondary" href="https://www.booking.com/hotel/eg/the-boutique-hurghada.html" target="_blank" rel="noopener noreferrer">Booking 页面</a>
+            </div>
           </article>
-          <article class="section-card">
-            <h3>EgyptAir 值机提醒</h3>
+
+          <article class="hotel-card">
+            <header>
+              <div>
+                <span class="badge">赫尔格达｜更稳妥型</span>
+                <h3>Steigenberger Aqua Magic</h3>
+              </div>
+              <span class="source-type">酒店官网 / H Rewards</span>
+            </header>
+            <p>
+              适合想把前两晚做得更舒服的人。更像标准度假酒店，适合晚到后直接躺平，也适合第二天一早出海。
+            </p>
             <ul>
-              <li>国际航班建议至少提前 3 小时到机场。</li>
-              <li>值机一般会在起飞前 60 分钟关闭，所以 Day 8 不要贪多加点。</li>
+              <li>房型建议：2 间 twin room；舒适度通常比 Marina 小型酒店更稳。</li>
+              <li>适合原因：机场落地后恢复快，设施完整。</li>
+              <li>执行预算：按 £110-£160 / twin room / 晚预留。</li>
+            </ul>
+            <div class="button-row">
+              <a class="button-link" href="https://steigenbergeraldauresort.com/en/steigenberger-aqua-magic" target="_blank" rel="noopener noreferrer">酒店官网</a>
+              <a class="button-link secondary" href="https://hrewards.com/en/steigenberger-aqua-magic-hurghada" target="_blank" rel="noopener noreferrer">H Rewards</a>
+            </div>
+          </article>
+
+          <article class="hotel-card">
+            <header>
+              <div>
+                <span class="badge">卢克索｜更省预算型</span>
+                <h3>Nefertiti Hotel Luxor</h3>
+              </div>
+              <span class="source-type">酒店官网 + Booking</span>
+            </header>
+            <p>
+              适合 Day 4-5。它的优势是位置和性价比，不是奢华，但很适合只在卢克索住 2 晚、重点跑景点的人。
+            </p>
+            <ul>
+              <li>房型建议：2 间 twin 或 twin + double，越早订越好。</li>
+              <li>适合原因：离卢克索神庙近，去东岸和西岸都方便。</li>
+              <li>执行预算：按 £35-£55 / twin room / 晚预留。</li>
+            </ul>
+            <div class="button-row">
+              <a class="button-link" href="https://www.nefertitihotel.com/" target="_blank" rel="noopener noreferrer">酒店官网</a>
+              <a class="button-link secondary" href="https://www.booking.com/hotel/eg/nefertiti.html" target="_blank" rel="noopener noreferrer">Booking 页面</a>
+            </div>
+          </article>
+
+          <article class="hotel-card">
+            <header>
+              <div>
+                <span class="badge">卢克索｜更稳妥型</span>
+                <h3>Steigenberger Nile Palace Luxor</h3>
+              </div>
+              <span class="source-type">H Rewards</span>
+            </header>
+            <p>
+              如果你们想把卢克索这段住得更舒服，这是最省心的升级项。河景和服务感都更稳定，但预算也会上去。
+            </p>
+            <ul>
+              <li>房型建议：2 间 twin room；直接在预订备注里写 separate beds。</li>
+              <li>适合原因：行程强度高的时候，住得更稳会明显减压。</li>
+              <li>执行预算：按 £95-£145 / twin room / 晚预留。</li>
+            </ul>
+            <div class="button-row">
+              <a class="button-link" href="https://hrewards.com/en/steigenberger-nile-palace-luxor" target="_blank" rel="noopener noreferrer">H Rewards</a>
+              <a class="button-link secondary" href="https://www.booking.com/hotel/eg/steigenberger-nile-palace-luxor.html" target="_blank" rel="noopener noreferrer">Booking 页面</a>
+            </div>
+          </article>
+
+          <article class="hotel-card">
+            <header>
+              <div>
+                <span class="badge">开罗市中心｜更省预算型</span>
+                <h3>Tahrir Plaza Suites - Museum View</h3>
+              </div>
+              <span class="source-type">Booking + Agoda</span>
+            </header>
+            <p>
+              如果你们坚持 Day 7 要把老城和亚历山大都塞进去，市中心比 Giza 更合适。它的优势是机动性，而不是景观。
+            </p>
+            <ul>
+              <li>房型建议：2 间 twin room 或 2 间标准双床房。</li>
+              <li>适合原因：Day 7 一早去城堡和苏丹哈桑更省时间。</li>
+              <li>执行预算：按 £45-£70 / twin room / 晚预留。</li>
+            </ul>
+            <div class="button-row">
+              <a class="button-link" href="https://www.booking.com/hotel/eg/tahrir-plaza-suites.html" target="_blank" rel="noopener noreferrer">Booking 页面</a>
+              <a class="button-link secondary" href="https://www.agoda.com/en-in/tahrir-plaza-suites/hotel/cairo-eg.html" target="_blank" rel="noopener noreferrer">Agoda 页面</a>
+            </div>
+          </article>
+
+          <article class="hotel-card">
+            <header>
+              <div>
+                <span class="badge">开罗 / 吉萨｜拍照优先型</span>
+                <h3>Great Pyramid Inn</h3>
+              </div>
+              <span class="source-type">酒店官网 + Booking</span>
+            </header>
+            <p>
+              如果你们最后决定把开罗部分改成“金字塔优先”，Great Pyramid Inn 是更便宜、更直观的视野型住法，适合最后两晚改住 Giza。
+            </p>
+            <ul>
+              <li>房型建议：优先 twin room；景观房比基础房更适合拍照。</li>
+              <li>适合原因：离金字塔非常近，Day 8 一早进场最顺。</li>
+              <li>公开搜索快照里 Kayak 出现过 £22 起，但执行上仍建议按 £25-£45 / twin room / 晚预留。</li>
+            </ul>
+            <div class="button-row">
+              <a class="button-link" href="https://greatpyramidinn.com/booking/" target="_blank" rel="noopener noreferrer">酒店官网</a>
+              <a class="button-link secondary" href="https://www.booking.com/hotel/eg/great-pyramid-inn.html" target="_blank" rel="noopener noreferrer">Booking 页面</a>
+            </div>
+          </article>
+
+          <article class="hotel-card">
+            <header>
+              <div>
+                <span class="badge">开罗市中心｜更稳妥型</span>
+                <h3>Steigenberger Hotel El Tahrir Cairo</h3>
+              </div>
+              <span class="source-type">酒店官网 / H Rewards</span>
+            </header>
+            <p>
+              如果预算允许，它是最平衡的开罗选择。位置适中，房型稳定，适合 Day 7 高强度赶行程的前提下保证睡眠质量。
+            </p>
+            <ul>
+              <li>房型建议：2 间 twin；若能订到联通房更适合 4 人同行。</li>
+              <li>适合原因：比住 Giza 更适合“全覆盖版”的开罗段。</li>
+              <li>执行预算：按 £100-£150 / twin room / 晚预留。</li>
+            </ul>
+            <div class="button-row">
+              <a class="button-link" href="https://hrewards.com/en/steigenberger-hotel-el-tahrir-cairo" target="_blank" rel="noopener noreferrer">H Rewards</a>
+              <a class="button-link secondary" href="https://www.booking.com/hotel/eg/steigenberger-el-tahrir.html" target="_blank" rel="noopener noreferrer">Booking 页面</a>
+            </div>
+          </article>
+        </div>
+        <div class="footer-note">
+          <strong>订房建议：</strong>
+          如果坚持全覆盖主方案，开罗优先住市中心；如果最后把亚历山大删掉，才值得把最后两晚改成 Giza 视野酒店。
+        </div>
+      </section>
+
+      <section id="activities">
+        <div class="section-head">
+          <div>
+            <h2>活动预订来源</h2>
+          </div>
+          <p>优先给运营方直链；直链不够清楚或不方便时，再给可执行的主渠道入口。</p>
+        </div>
+        <div class="grid-2">
+          <article class="activity-card">
+            <header>
+              <div>
+                <span class="badge">赫尔格达出海 / 浮潜</span>
+                <h3>Aquarius Diving Club - Hurghada</h3>
+              </div>
+              <span class="source-type">运营方直链</span>
+            </header>
+            <p>适合会下水的人。不会游泳的同行，不建议勉强下海，直接改半潜艇或观景船更合适。</p>
+            <ul>
+              <li>为什么选：运营方页面直接有 Hurghada booking form，执行路径清楚。</li>
+              <li>适合人群：会浮潜、想拍船上和海水活动的人。</li>
+              <li>注意：下单前确认是否含酒店接送、浮潜装备、船上午餐和救生衣。</li>
+            </ul>
+            <div class="button-row">
+              <a class="button-link" href="https://www.aquariusredsea.com/res-hrg.html" target="_blank" rel="noopener noreferrer">运营方预订页</a>
+              <a class="button-link secondary" href="https://www.aquariusredsea.com/" target="_blank" rel="noopener noreferrer">运营方主页</a>
+            </div>
+          </article>
+
+          <article class="activity-card">
+            <header>
+              <div>
+                <span class="badge">不会游泳的海底观景替代</span>
+                <h3>Royal Sea Scope / Sea Scope 类半潜艇</h3>
+              </div>
+              <span class="source-type">运营方 + 主渠道</span>
+            </header>
+            <p>这类项目更适合“不想下水但还是想看珊瑚和鱼”的人，是这组里最容易一半人下水、一半人不下水也都满意的方案。</p>
+            <ul>
+              <li>为什么选：你们同行里如果有人不会游泳，这个替代方案比强行上浮潜更稳。</li>
+              <li>预订注意：优先看当天风浪，风大时宁可放弃。</li>
+              <li>预算口径：通常比整船浮潜便宜或接近，按 £15-£30 / 人预留较稳。</li>
+            </ul>
+            <div class="button-row">
+              <a class="button-link" href="https://www.egyptsunmarine.com/en/fleet/royal-sea-scope/location/ship" target="_blank" rel="noopener noreferrer">项目页面</a>
+              <a class="button-link secondary" href="http://seascope.com/" target="_blank" rel="noopener noreferrer">运营方主页</a>
+            </div>
+          </article>
+
+          <article class="activity-card">
+            <header>
+              <div>
+                <span class="badge">赫尔格达冲沙 + 观星</span>
+                <h3>Scorpion Safari Stargazing Safari</h3>
+              </div>
+              <span class="source-type">运营方直链</span>
+            </header>
+            <p>如果你们想把“冲沙 + 落日 + 晚餐 + 观星”一次做完，这是比单纯 quad bike 更适合这次旅行节奏的线路。</p>
+            <ul>
+              <li>为什么选：官方活动页就是 stargazing safari，不需要自己再拼项目。</li>
+              <li>注意：看清线路里四轮车占比，Jeep 主体比 quad 主体更推荐。</li>
+              <li>预算口径：按 £20-£35 / 人预留。</li>
+            </ul>
+            <div class="button-row">
+              <a class="button-link" href="https://www.scorpionsafari.com/activity/stargazing-safari-in-hurghada" target="_blank" rel="noopener noreferrer">运营方活动页</a>
+              <a class="button-link secondary" href="https://www.scorpionsafari.com/" target="_blank" rel="noopener noreferrer">运营方主页</a>
+            </div>
+          </article>
+
+          <article class="activity-card">
+            <header>
+              <div>
+                <span class="badge">卢克索热气球</span>
+                <h3>HodHod Soliman Hot Air Balloon</h3>
+              </div>
+              <span class="source-type">运营方直链</span>
+            </header>
+            <p>这是卢克索最值得保留的高光体验之一，但也是最依赖天气和临场调度的项目，所以一定不要把后续安排写得太死。</p>
+            <ul>
+              <li>为什么选：可直接落到运营方官网，不用只靠转卖平台。</li>
+              <li>注意：热气球不是“越早订越便宜”这么简单，最重要是天气和接送确认。</li>
+              <li>预算口径：按 £45-£80 / 人预留。</li>
+            </ul>
+            <div class="button-row">
+              <a class="button-link" href="https://hodhodsolimanballoons.com/" target="_blank" rel="noopener noreferrer">运营方官网</a>
+              <a class="button-link secondary" href="https://www.tripadvisor.ie/Attraction_Review-g294205-d4196268-Reviews-Hod_Hod_Soliman_Hot_Air_Balloons-Luxor_Nile_River_Valley.html" target="_blank" rel="noopener noreferrer">评价参考</a>
+            </div>
+          </article>
+
+          <article class="activity-card">
+            <header>
+              <div>
+                <span class="badge">卢克索尼罗河短船</span>
+                <h3>Felucca Ride on the Nile</h3>
+              </div>
+              <span class="source-type">本地运营商 + 备选平台</span>
+            </header>
+            <p>在 8 天里，最合理的“尼罗河游船”做法不是强行挤一晚 cruise，而是做 1 小时左右的 felucca 或短时 sunset cruise。</p>
+            <ul>
+              <li>为什么选：能满足“上尼罗河”这件事，又不会打乱卢克索到开罗的转场。</li>
+              <li>预算口径：按 £10-£18 / 人预留，私包船会更高。</li>
+              <li>注意：和热气球不要挤在同一早晨，建议排在 Day 6。</li>
+            </ul>
+            <div class="button-row">
+              <a class="button-link" href="https://www.luxorandaswan.com/Egypt/tour/Felucca-Ride-on-the-Nile" target="_blank" rel="noopener noreferrer">本地运营商</a>
+              <a class="button-link secondary" href="https://www.booking.com/attractions/eg/prqdsbbavvrf-two-hour-nile-felucca-ride.en-gb.html" target="_blank" rel="noopener noreferrer">Booking Attractions</a>
+            </div>
+          </article>
+
+          <article class="activity-card">
+            <header>
+              <div>
+                <span class="badge">在地安全底线</span>
+                <h3>所有水上 / 沙漠 / 热气球项目都要做的检查</h3>
+              </div>
+              <span class="source-type">执行清单</span>
+            </header>
+            <p>这部分不是景点，但比“订哪家”更重要。尤其是你们有不会游泳的人，还要兼顾拍照和体力。</p>
+            <ul>
+              <li>确认是否含酒店接送，不然清晨补打车会很痛苦。</li>
+              <li>确认可取消条件，特别是热气球和海上项目。</li>
+              <li>船日看救生衣和 briefing，沙漠团看头盔，热气球看接送时间二次确认。</li>
             </ul>
           </article>
         </div>
       </section>
 
-      <section id="safety">
+      <section id="sim">
         <div class="section-head">
           <div>
-            <h2>活动选择与安全提醒</h2>
+            <h2>手机卡与网络</h2>
           </div>
-          <p>原报告最强调的一点不是“活动多好玩”，而是“安全标准是否清晰、是否经得起核验”。</p>
+          <p>默认建议是：落地就要用网的人优先本地实体 SIM；怕换卡麻烦且手机支持 eSIM 的人，直接上 Orange eSIM 更稳。</p>
         </div>
-        <div class="supply-grid">
-          <article class="supply-card">
-            <span class="badge">红海船日 / 浮潜</span>
-            <h3>优先找有明确行业归属的供应商</h3>
+        <div class="grid-2">
+          <article class="info-card">
+            <h3>首选：Vodafone Tourist Line 实体卡</h3>
             <p>
-              报告推荐优先考虑在当地潜水与水上运动行业名录里能查到的供应商，比如
-              Extra Divers Worldwide - Hurghada、
-              Aquarius Diving Club - Hurghada、
-              Diving Star - Hurghada。
+              Vodafone 官方 Tourist Line 页面明确写了：游客可以在
+              <strong>机场门店</strong>
+              或
+              <strong>埃及境内 Vodafone 零售门店</strong>
+              购买 TourSIM。
             </p>
             <ul>
-              <li>登船前确认有完整安全说明。</li>
-              <li>查看船上是否有救生衣、氧气和基础急救设备。</li>
-              <li>确认活动保险和紧急救援是否覆盖。</li>
+              <li>适合谁：落地就要打车、联系司机、看地图的人。</li>
+              <li>官方页面说明：含大流量、本地分钟和国际分钟，但公开页未直接写套餐价。</li>
+              <li>执行预算：建议预留 EGP 350-700 / 人，看机场店当日套餐。</li>
             </ul>
+            <div class="button-row">
+              <a class="button-link" href="https://web.vodafone.com.eg/en/tourist-line" target="_blank" rel="noopener noreferrer">Vodafone Tourist Line</a>
+              <a class="button-link secondary" href="http://www.vodafone.com.eg/Website/StoreLocator/index.html" target="_blank" rel="noopener noreferrer">门店定位</a>
+            </div>
           </article>
 
-          <article class="supply-card">
-            <span class="badge">不会游泳的替代方案</span>
-            <h3>半潜艇或海底观景更友好</h3>
+          <article class="info-card">
+            <h3>备选：Orange eSIM</h3>
             <p>
-              如果同行有人不会游泳，原报告特别提到可以选像
-              Royal Sea Scope Semi-Submarines 这类项目，既能看珊瑚和鱼群，又不会把体验完全建立在下水上。
+              Orange 官方 eSIM 页面能直接读到价格：
+              <strong>新 eSIM 线 EGP 350</strong>，
+              <strong>实体 SIM 转 eSIM EGP 300</strong>。
             </p>
             <ul>
-              <li>即便不上水，也要把它当作船只活动来看待。</li>
-              <li>照样检查救生衣和安全说明。</li>
-              <li>风浪大时宁可改期，不要硬上。</li>
+              <li>适合谁：不想换实体卡、手机支持 eSIM、想保持双卡的人。</li>
+              <li>好处：不用在机场排柜台太久，线更干净。</li>
+              <li>注意：出发前先确认你们的手机都支持 eSIM。</li>
             </ul>
+            <div class="button-row">
+              <a class="button-link" href="https://www.orange.eg/en/services/esim" target="_blank" rel="noopener noreferrer">Orange eSIM</a>
+              <a class="button-link secondary" href="https://www.orange.eg/en/help/roaming-international/roaming/travel-egypt/holidays-line" target="_blank" rel="noopener noreferrer">Orange Holidays Line</a>
+            </div>
           </article>
-
-          <article class="supply-card">
-            <span class="badge">沙漠团与观星</span>
-            <h3>宁可 Jeep 为主，也别把刺激放第一位</h3>
-            <p>
-              报告提到 Hurghada Safari 和 Egypt Stargazing 这类有专门“观星 / 沙漠”产品的供应商。真正重要的是线路设计是否稳妥，而不是四轮车是否够猛。
-            </p>
-            <ul>
-              <li>四轮车如果是可选，不建议作为主打内容。</li>
-              <li>若参加，头盔必须戴好，护目镜也要有。</li>
-              <li>更推荐 Jeep + 落日 + 观星的组合。</li>
-            </ul>
-          </article>
-
-          <article class="supply-card">
-            <span class="badge">卢克索热气球</span>
-            <h3>把它当作“可能被天气取消的高级项目”</h3>
-            <p>
-              报告列出 HodHod Soliman Hot Air Balloon 和 Sindbad Balloons 作为可考虑对象，但同时提醒：热气球安全标准很难完全外部核验，临时取消也很常见。
-            </p>
-            <ul>
-              <li>务必在前一晚二次确认接送时间。</li>
-              <li>不要把热气球后面的日程排得过满。</li>
-              <li>接受天气取消或改时段的可能性。</li>
-            </ul>
-          </article>
-        </div>
-        <div class="callout">
-          <strong>这组人最需要记住的 4 个安全点：</strong>
-          红海船只安全标准差异很大；四轮车事故风险真实存在；热气球要预留取消弹性；保险必须覆盖船只、热气球、沙漠活动和可能的紧急转运费用。
         </div>
       </section>
 
-      <section id="hotel">
+      <section id="weather">
         <div class="section-head">
           <div>
-            <h2>酒店与预算</h2>
+            <h2>4 月下旬温度与穿衣</h2>
           </div>
-          <p>原报告走的是“舒适但不追求极致奢华”的路线，比较适合 4 个成人分房入住。</p>
+          <p>这里写的是季节平均范围，不是假装成某一天的精确预报。真正天气临近出发再看即可。</p>
         </div>
-        <div class="hotel-grid">
-          <article class="hotel-card">
-            <span class="badge">赫尔格达</span>
-            <h3>Steigenberger Aqua Magic</h3>
-            <p>
-              靠近机场，设施完整，适合落地后直接恢复状态，也适合第二天一早出海。对于“第一晚不要折腾”的需求很友好。
-            </p>
+        <div class="grid-4">
+          <article class="info-card">
+            <h3>赫尔格达</h3>
+            <p>白天约 29-31°C，夜里约 21-23°C，海风会缓和体感。</p>
+            <ul>
+              <li>船日：薄长袖防晒外搭最实用。</li>
+              <li>晚上：海边吃饭通常不用厚外套。</li>
+            </ul>
           </article>
-          <article class="hotel-card">
-            <span class="badge">卢克索</span>
-            <h3>Steigenberger Nile Palace</h3>
-            <p>
-              尼罗河边，房型里有比较适合双床分配的选择。对“两男两女、两间房”这种住法很实用。
-            </p>
+          <article class="info-card">
+            <h3>卢克索</h3>
+            <p>白天约 34-37°C，夜里约 18-22°C，是全程最热的一站。</p>
+            <ul>
+              <li>热气球清晨要带一件薄外套。</li>
+              <li>帝王谷和卡纳克中午后体感会明显更热。</li>
+            </ul>
           </article>
-          <article class="hotel-card">
-            <span class="badge">开罗市中心</span>
-            <h3>Steigenberger Hotel El Tahrir Cairo</h3>
-            <p>
-              位置更适合城市观光，双床和联通房信息也更明确。如果你们更看重市内机动性，这个点位更均衡。
-            </p>
+          <article class="info-card">
+            <h3>开罗</h3>
+            <p>白天约 28-31°C，夜里约 17-20°C，日照强但没有卢克索那么晒。</p>
+            <ul>
+              <li>早晨跑金字塔舒服，中午进博物馆刚好。</li>
+              <li>城堡和清真寺上午拍最稳。</li>
+            </ul>
           </article>
-          <article class="hotel-card">
-            <span class="badge">吉萨 / GEM 周边</span>
-            <h3>Steigenberger Pyramids Cairo</h3>
-            <p>
-              靠近大埃及博物馆，强调金字塔视野，适合把最后两天做成“拍照优先”的开罗段落。
-            </p>
+          <article class="info-card">
+            <h3>亚历山大</h3>
+            <p>白天约 24-26°C，夜里约 16-18°C，海边风感最明显。</p>
+            <ul>
+              <li>比内陆凉一些，傍晚海边建议带一件轻薄外套。</li>
+              <li>如果当天阴风大，海边观感会比拍照更舒服。</li>
+            </ul>
           </article>
         </div>
+      </section>
 
-        <div class="budget-grid" style="margin-top: 18px;">
-          <article class="budget-card">
-            <span class="badge">房型建议</span>
-            <h3>最直接的住法：2 间双床房</h3>
-            <p>最省事的安排就是 2 间 twin room，每间 2 张单人床，正好适配两男两女分房，不需要临时协调谁睡大床。</p>
+      <section>
+        <div class="section-head">
+          <div>
+            <h2>行李与飞行规则</h2>
+          </div>
+          <p>这部分已经按你给的口径写死，不再模糊处理。</p>
+        </div>
+        <div class="grid-2">
+          <article class="info-card">
+            <h3>easyJet 去程：按 2 × 23kg 写</h3>
+            <ul>
+              <li>easyJet 官方写明：标准托运行李是 23kg / 件。</li>
+              <li>同一航班、同一预订下可做重量池化，总量可在你们 2 件行李之间灵活分配。</li>
+              <li>单件仍不能超过 32kg，所以不要把所有重物压进一只箱子。</li>
+            </ul>
+            <div class="button-row">
+              <a class="button-link" href="https://www.easyjet.com/en/help/baggage/hold-luggage" target="_blank" rel="noopener noreferrer">easyJet 行李规则</a>
+            </div>
           </article>
-          <article class="budget-card">
-            <span class="badge">如果想更宽敞</span>
-            <h3>也可以考虑 1 间双床 + 1 间大床</h3>
-            <p>或者直接问联通房，尤其是开罗酒店。如果你们行李多、拍照装备多，联通房的体感会更舒服。</p>
+
+          <article class="info-card">
+            <h3>EgyptAir 国内段：出发前二次核对</h3>
+            <ul>
+              <li>卢克索飞开罗那段，请按最终出票舱等再核对 EgyptAir 官方行李页。</li>
+              <li>页面预算先按“国内段买到含托运的常规经济舱”处理；若最终买到更轻价票，再补差额即可。</li>
+              <li>国际回程仍建议至少提前 3 小时到机场，值机不要卡太满。</li>
+            </ul>
+            <div class="button-row">
+              <a class="button-link" href="https://www.egyptair.com/en/fly/baggage/Pages/baggage-allowance.aspx" target="_blank" rel="noopener noreferrer">EgyptAir 行李页</a>
+              <a class="button-link secondary" href="https://www.egyptair.com/en/fly/check-in/Pages/web-check-in.aspx" target="_blank" rel="noopener noreferrer">EgyptAir Web Check-in</a>
+            </div>
           </article>
+        </div>
+      </section>
+
+      <section id="budget">
+        <div class="section-head">
+          <div>
+            <h2>预算总表</h2>
+          </div>
+          <p>预算换算采用 2026 年 3 月中旬公开市场快照近似值：1 GBP ≈ EGP 64，1 USD ≈ GBP 0.77，仅用于行前估算。</p>
+        </div>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>在地预算项</th>
+                <th>单人估算</th>
+                <th>4 人合计</th>
+                <th>怎么来的</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>埃及电子签</td>
+                <td>约 £19</td>
+                <td>约 £76</td>
+                <td>官方 e-Visa 单次入境 US$25</td>
+              </tr>
+              <tr>
+                <td>酒店（预算路线）</td>
+                <td>约 £145-£225</td>
+                <td>约 £580-£900</td>
+                <td>按 2 间 twin、7 晚、AJIRA + Nefertiti + Tahrir Plaza 口径预留</td>
+              </tr>
+              <tr>
+                <td>官方景点门票</td>
+                <td>约 £78</td>
+                <td>约 £312</td>
+                <td>金字塔 + GEM + 帝王谷 + 卡纳克 + 卢克索神庙 + 城堡 + 苏丹哈桑 + 凯特贝</td>
+              </tr>
+              <tr>
+                <td>赫尔格达船日</td>
+                <td>约 £18-£40</td>
+                <td>约 £72-£160</td>
+                <td>浮潜船或半潜艇方案的执行预留</td>
+              </tr>
+              <tr>
+                <td>冲沙 + 观星</td>
+                <td>约 £20-£35</td>
+                <td>约 £80-£140</td>
+                <td>以 Jeep 主体线路估算</td>
+              </tr>
+              <tr>
+                <td>卢克索热气球</td>
+                <td>约 £45-£80</td>
+                <td>约 £180-£320</td>
+                <td>按直订或主渠道公开常见价位预留</td>
+              </tr>
+              <tr>
+                <td>尼罗河短船</td>
+                <td>约 £10-£18</td>
+                <td>约 £40-£72</td>
+                <td>1 小时左右 felucca / sunset boat</td>
+              </tr>
+              <tr>
+                <td>赫尔格达 → 卢克索包车</td>
+                <td>约 £28-£38</td>
+                <td>约 £110-£150</td>
+                <td>4 人分摊一辆私家车</td>
+              </tr>
+              <tr>
+                <td>卢克索 → 开罗国内航班</td>
+                <td>约 £55-£95</td>
+                <td>约 £220-£380</td>
+                <td>按常规经济舱含行李预留</td>
+              </tr>
+              <tr>
+                <td>开罗 ↔ 亚历山大往返</td>
+                <td>约 £18-£45</td>
+                <td>约 £72-£180</td>
+                <td>快车火车或私家车分摊</td>
+              </tr>
+              <tr>
+                <td>手机卡 / eSIM</td>
+                <td>约 £5-£12</td>
+                <td>约 £20-£48</td>
+                <td>按 Vodafone Tourist Line 或 Orange eSIM 口径预留</td>
+              </tr>
+              <tr>
+                <td>餐饮 + 水 + 小额杂支</td>
+                <td>约 £110-£180</td>
+                <td>约 £440-£720</td>
+                <td>按 7 天中等消费预留</td>
+              </tr>
+              <tr>
+                <td><strong>在地预算合计</strong></td>
+                <td><strong>约 £551-£865</strong></td>
+                <td><strong>约 £2,204-£3,460</strong></td>
+                <td>不含你们已买的国际机票</td>
+              </tr>
+            </tbody>
+          </table>
         </div>
 
         <div class="table-wrap" style="margin-top: 18px;">
           <table>
             <thead>
               <tr>
-                <th>项目</th>
-                <th>参考价格</th>
-                <th>说明</th>
+                <th>全程总预算口径</th>
+                <th>单人</th>
+                <th>4 人合计</th>
+                <th>备注</th>
               </tr>
             </thead>
             <tbody>
               <tr>
-                <td>吉萨金字塔景区</td>
-                <td>EGP 700 / 人</td>
-                <td>建议一早去，兼顾光线和人流。</td>
+                <td>在地预算</td>
+                <td>约 £551-£865</td>
+                <td>约 £2,204-£3,460</td>
+                <td>上表合计</td>
               </tr>
               <tr>
-                <td>大埃及博物馆（GEM）</td>
-                <td>EGP 1,450 / 人</td>
-                <td>通常是时段票，提前订更稳。</td>
+                <td>国际机票</td>
+                <td>已购，未做精确重估</td>
+                <td>已购，未做精确重估</td>
+                <td>如果你想要最终总价最准确，直接把你们真实票价加进去即可</td>
               </tr>
               <tr>
-                <td>开罗城堡</td>
-                <td>EGP 550 / 人</td>
-                <td>适合和伊斯兰建筑一起排在最后一天上午。</td>
+                <td>当前公开票价占位</td>
+                <td>可暂按 £450-£620 / 人占位</td>
+                <td>可暂按 £1,800-£2,480 占位</td>
+                <td>基于 2026 年 3 月中旬第三方路线快照，只是占位，不是你们真实已购价</td>
               </tr>
               <tr>
-                <td>苏丹哈桑清真寺-经学院</td>
-                <td>EGP 220 / 人</td>
-                <td>时间不需要太长，但建筑很值得看。</td>
-              </tr>
-              <tr>
-                <td>帝王谷</td>
-                <td>EGP 750 / 人</td>
-                <td>越早进场越舒服。</td>
-              </tr>
-              <tr>
-                <td>卡纳克神庙</td>
-                <td>EGP 600 / 人</td>
-                <td>适合下午偏晚进入。</td>
-              </tr>
-              <tr>
-                <td>卢克索神庙</td>
-                <td>EGP 500 / 人</td>
-                <td>黄昏与夜景很值得。</td>
+                <td><strong>含票价占位的总预算</strong></td>
+                <td><strong>约 £1,001-£1,485</strong></td>
+                <td><strong>约 £4,004-£5,940</strong></td>
+                <td>真正最终值仍以你们已购机票账单替换占位项为准</td>
               </tr>
             </tbody>
           </table>
         </div>
+      </section>
 
-        <div class="budget-grid" style="margin-top: 18px;">
-          <article class="budget-card">
-            <span class="badge">景点门票小计</span>
-            <h3>核心景点约 EGP 4,770 / 人</h3>
-            <p>按报告中的景点组合，大约相当于 £68 左右。若加进金字塔内部、特殊墓室或额外拍摄点，费用会继续上升。</p>
+      <section>
+        <div class="section-head">
+          <div>
+            <h2>签证与出发前文件</h2>
+          </div>
+          <p>这一块保持最实用，只放真正会卡住你们出发的东西。</p>
+        </div>
+        <div class="grid-3">
+          <article class="source-card">
+            <h3>电子签</h3>
+            <p>中国护照可走埃及官方 e-Visa。单次入境 US$25，多次入境 US$60，建议至少提前 7 个工作日申请。</p>
+            <div class="button-row">
+              <a class="button-link" href="https://visa2egypt.gov.eg/en" target="_blank" rel="noopener noreferrer">官方 e-Visa</a>
+            </div>
           </article>
-          <article class="budget-card">
-            <span class="badge">全程预算范围</span>
-            <h3>不含国际机票</h3>
-            <p>
-              方案 B 轻松版通常约 £950 - £1,250 / 人；方案 A 全景点版约 £1,050 - £1,400 / 人。真正拉开差距的主要是酒店等级、是否大量使用包车 / 私导，以及热气球和船日的产品档次。
-            </p>
+          <article class="source-card">
+            <h3>打印件</h3>
+            <p>护照首页、电子签、酒店订单、国际航班、国内航班和关键活动订单都建议至少留一份 PDF 和一份纸质版。</p>
+          </article>
+          <article class="source-card">
+            <h3>保险</h3>
+            <p>务必确认保险覆盖热气球、船只活动和沙漠项目；如果不覆盖，热气球和海上活动要额外谨慎。</p>
           </article>
         </div>
       </section>
 
-      <section id="practical">
+      <section>
         <div class="section-head">
           <div>
-            <h2>签证、健康与打包</h2>
+            <h2>来源与最后更新</h2>
           </div>
-          <p>这一部分我保留了报告里最实用、最容易在出发前遗漏的内容。</p>
+          <p>这页不把“来源”藏起来，关键信息都能顺着这几个入口回到原站。</p>
         </div>
-        <div class="tip-grid">
-          <article class="tip-card">
-            <h3>签证</h3>
+        <div class="grid-2">
+          <article class="source-card">
+            <h3>官方来源</h3>
             <ul>
-              <li>中国护照可优先考虑埃及电子签，单次入境约 US$25，多次约 US$60。</li>
-              <li>护照建议至少有 6 个月以上有效期，并准备好打印版电子签、行程和酒店信息。</li>
-              <li>电子签通常建议至少提前 7 个工作日申请。</li>
+              <li><a href="https://www.easyjet.com/en/help/baggage/hold-luggage" target="_blank" rel="noopener noreferrer">easyJet hold luggage</a></li>
+              <li><a href="https://visa2egypt.gov.eg/en" target="_blank" rel="noopener noreferrer">Egypt e-Visa portal</a></li>
+              <li><a href="https://visit-gem.com/en/home" target="_blank" rel="noopener noreferrer">GEM official home</a></li>
+              <li><a href="https://egymonuments.com/locations" target="_blank" rel="noopener noreferrer">EGYMonuments locations</a></li>
+              <li><a href="https://www.egyptair.com/en/fly/baggage/Pages/baggage-allowance.aspx" target="_blank" rel="noopener noreferrer">EgyptAir baggage allowance</a></li>
+              <li><a href="https://web.vodafone.com.eg/en/tourist-line" target="_blank" rel="noopener noreferrer">Vodafone Tourist Line</a></li>
+              <li><a href="https://www.orange.eg/en/services/esim" target="_blank" rel="noopener noreferrer">Orange eSIM</a></li>
             </ul>
           </article>
-          <article class="tip-card">
-            <h3>健康与保险</h3>
+          <article class="source-card">
+            <h3>酒店 / 活动直站或主渠道</h3>
             <ul>
-              <li>保险要覆盖医疗、活动项目和可能的紧急撤离。</li>
-              <li>埃及急救电话常见为：警察 122、旅游警察 126、救护车 123。</li>
-              <li>如果携带处方药，最好附医生说明信。</li>
-            </ul>
-          </article>
-          <article class="tip-card">
-            <h3>拍照注意</h3>
-            <ul>
-              <li>避开军警、政府设施等敏感区域拍摄。</li>
-              <li>无人机不要随便带，相关限制严格。</li>
-              <li>手机摄影在部分景点是允许的，但个别特殊区域可能另有规定。</li>
-            </ul>
-          </article>
-          <article class="tip-card">
-            <h3>最实用的打包清单</h3>
-            <ul>
-              <li>护照、打印签证、酒店与机票订单。</li>
-              <li>防晒、帽子、润唇膏、电解质补给和可重复装水瓶。</li>
-              <li>神庙和沙漠适合穿包脚鞋，清晨热气球要带一件薄外套。</li>
-              <li>相机备用电池、充电宝和小型急救包都很有必要。</li>
+              <li><a href="https://ajirahotels.com/ajira-boutique-hotel-hurghada-marina" target="_blank" rel="noopener noreferrer">AJIRA Boutique Hotel</a></li>
+              <li><a href="https://www.nefertitihotel.com/" target="_blank" rel="noopener noreferrer">Nefertiti Hotel Luxor</a></li>
+              <li><a href="https://www.aquariusredsea.com/res-hrg.html" target="_blank" rel="noopener noreferrer">Aquarius Hurghada booking form</a></li>
+              <li><a href="https://www.scorpionsafari.com/activity/stargazing-safari-in-hurghada" target="_blank" rel="noopener noreferrer">Scorpion Safari Stargazing</a></li>
+              <li><a href="https://hodhodsolimanballoons.com/" target="_blank" rel="noopener noreferrer">HodHod Soliman Balloons</a></li>
+              <li><a href="https://www.luxorandaswan.com/Egypt/tour/Felucca-Ride-on-the-Nile" target="_blank" rel="noopener noreferrer">Luxor &amp; Aswan Felucca Ride</a></li>
             </ul>
           </article>
         </div>
-
-        <div class="summary-grid" style="margin-top: 18px;">
-          <article class="section-card">
-            <h3>适合你们日期的拍照节奏</h3>
-            <ul>
-              <li>海边和沙漠的重点是傍晚光线。</li>
-              <li>金字塔、帝王谷和神庙更适合早进场，兼顾天气和人流。</li>
-              <li>卢克索神庙最好保留给黄昏以后。</li>
-            </ul>
-          </article>
-          <article class="section-card">
-            <h3>降低出行摩擦的小技巧</h3>
-            <ul>
-              <li>能买官方电子票的景点尽量提前买。</li>
-              <li>Day 8 不建议临时增加新点位，以免机场时间太紧。</li>
-              <li>用正规叫车软件，夜间尽量结伴，不做单独长距离移动。</li>
-            </ul>
-          </article>
-        </div>
-
-        <div class="footnote">
-          这份页面是基于你提供的原始研究报告内容整理而成的
-          <strong>中文版展示页</strong>，重点是让内容更自然、好读、适合直接发给同行的人看。票价、开放时间、签证细则和活动供应商情况都可能变化，正式下单前仍建议再核对官方渠道。
+        <div class="footer-note">
+          页面最后人工核对时间：
+          <strong>2026-03-15</strong>。
+          酒店、活动和航班类价格波动最快；如果你要下单，优先把页内按钮点开再看一次当天价。
         </div>
       </section>
     </main>
 
     <footer class="shell">
       <div class="footer-card">
-        <strong>推荐最终执行版：</strong>
-        如果没有特别执念一定要把亚历山大塞进去，就按
-        <strong>方案 B</strong>
-        走。它最符合“拍照好看、节奏不乱、四个人行动不太累”这三个目标。
+        <strong>最终建议：</strong>
+        现在这页已经是“能直接执行”的版本了。如果你们最后想降低崩盘风险，只做一件删减就够：
+        <strong>删掉亚历山大</strong>。
+        其余核心点位都还能保住，而且体验会明显更好。
       </div>
     </footer>
-
-    <script>
-      const buttons = document.querySelectorAll("[data-tab]");
-      const panels = document.querySelectorAll("[data-panel]");
-
-      buttons.forEach((button) => {
-        button.addEventListener("click", () => {
-          const target = button.getAttribute("data-tab");
-
-          buttons.forEach((item) => {
-            const active = item === button;
-            item.classList.toggle("active", active);
-            item.setAttribute("aria-selected", active ? "true" : "false");
-          });
-
-          panels.forEach((panel) => {
-            panel.classList.toggle("active", panel.getAttribute("data-panel") === target);
-          });
-        });
-      });
-    </script>
   </body>
 </html>
