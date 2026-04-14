@@ -38,6 +38,10 @@
         scroll-behavior: smooth;
       }
 
+      [id] {
+        scroll-margin-top: 92px;
+      }
+
       body {
         margin: 0;
         color: var(--ink);
@@ -345,6 +349,49 @@
         color: var(--brand);
       }
 
+      .road-grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 18px;
+      }
+
+      .quick-card {
+        background: var(--paper);
+        border-radius: var(--radius-xl);
+        border: 1px solid rgba(255, 255, 255, 0.5);
+        box-shadow: var(--shadow);
+        padding: 24px;
+      }
+
+      .quick-card h3 {
+        font-size: 24px;
+        margin-bottom: 10px;
+      }
+
+      .quick-card p {
+        color: var(--ink-soft);
+      }
+
+      .quick-card ul {
+        margin: 14px 0 0;
+        padding-left: 1.2em;
+        color: var(--ink-soft);
+      }
+
+      .quick-card li + li {
+        margin-top: 8px;
+      }
+
+      .confirmed-card {
+        border-color: rgba(29, 123, 79, 0.22);
+        box-shadow: 0 18px 46px rgba(29, 123, 79, 0.08);
+      }
+
+      .pending-card {
+        border-color: rgba(193, 122, 17, 0.24);
+        box-shadow: 0 18px 46px rgba(193, 122, 17, 0.08);
+      }
+
       .risk {
         font-size: 13px;
         font-weight: 700;
@@ -451,6 +498,16 @@
         font-weight: 700;
       }
 
+      .booking-title-confirmed {
+        background: rgba(29, 123, 79, 0.12);
+        color: var(--good);
+      }
+
+      .booking-title-pending {
+        background: rgba(193, 122, 17, 0.14);
+        color: var(--warn);
+      }
+
       .support-row,
       .card-tags,
       .ticket-meta {
@@ -461,6 +518,35 @@
 
       .support-row {
         margin-top: 12px;
+      }
+
+      .fold {
+        margin-top: 12px;
+        border-radius: 16px;
+        border: 1px dashed rgba(32, 53, 61, 0.16);
+        background: rgba(255, 255, 255, 0.52);
+      }
+
+      .fold summary {
+        cursor: pointer;
+        list-style: none;
+        padding: 12px 14px;
+        font-size: 13px;
+        font-weight: 700;
+        color: var(--ink-soft);
+      }
+
+      .fold summary::-webkit-details-marker {
+        display: none;
+      }
+
+      .fold[open] summary {
+        border-bottom: 1px solid rgba(32, 53, 61, 0.08);
+      }
+
+      .fold .support-row {
+        margin-top: 0;
+        padding: 12px 14px 14px;
       }
 
       .card-tags {
@@ -534,6 +620,28 @@
         color: var(--ink-soft);
       }
 
+      .source-confirmed {
+        background: rgba(29, 123, 79, 0.12);
+        color: var(--good);
+      }
+
+      .source-pending {
+        background: rgba(193, 122, 17, 0.14);
+        color: var(--warn);
+      }
+
+      .badge-confirmed {
+        color: var(--good);
+        background: rgba(29, 123, 79, 0.12);
+        border: 1px solid rgba(29, 123, 79, 0.22);
+      }
+
+      .badge-pending {
+        color: var(--warn);
+        background: rgba(193, 122, 17, 0.14);
+        border: 1px solid rgba(193, 122, 17, 0.22);
+      }
+
       .footer-note {
         margin-top: 24px;
         padding: 18px 20px;
@@ -559,6 +667,7 @@
 
       @media (max-width: 1020px) {
         .hero-grid,
+        .road-grid,
         .grid-2,
         .grid-3,
         .grid-4,
@@ -608,6 +717,7 @@
         }
 
         .hero-card,
+        .quick-card,
         .side-card,
         .card,
         .day-card,
@@ -632,6 +742,10 @@
         .button-link {
           flex: 1 1 calc(50% - 10px);
           min-width: 132px;
+        }
+
+        .fold summary {
+          padding: 11px 12px;
         }
 
         .support-link {
@@ -660,6 +774,7 @@
         </div>
         <nav class="anchor-list" aria-label="页面导航">
           <a href="#overview">概览</a>
+          <a href="#road">路上只看</a>
           <a href="#itinerary">按天预定</a>
           <a href="#tickets">官方票务</a>
           <a href="#hotels">具体酒店</a>
@@ -676,7 +791,7 @@
       <section class="hero" id="overview">
         <div class="hero-grid">
           <article class="hero-card">
-            <span class="eyebrow">Latest update · 2026-03-15</span>
+            <span class="eyebrow">Latest update · 2026-04-14</span>
             <h1>适合 4 位成人的埃及 8 天高完成度行程<br />中文版执行页</h1>
             <p class="lead">
               这版不是单纯“看起来好看”的攻略页，而是按“现在就能去订”的标准重做：默认已经去掉最不稳的跨城往返，把重心放在更稳地完成赫尔格达、卢克索、开罗和吉萨，同时把酒店、官方票务入口、活动预订来源、手机卡、气温、行李和预算一起补全。
@@ -685,7 +800,7 @@
               <span class="mini-tag">固定日期：2026-04-23 至 2026-04-30</span>
               <span class="mini-tag">默认行李：easyJet 2 × 23kg</span>
               <span class="mini-tag">主方案：开罗上午 + 吉萨收尾</span>
-              <span class="mini-tag">页内链接均为 2026-03-15 核对口径</span>
+              <span class="mini-tag">页内链接均为 2026-04-14 最后核对</span>
             </div>
             <div class="callout">
               <strong>一句话结论：</strong>
@@ -738,14 +853,115 @@
             <article class="side-card">
               <h2>这页怎么用</h2>
               <ul class="check-list">
-                <li>先看第 1 部分的 8 天主行程，确认你们能接受 Day 7 上午看点位、下午再按 4 月 29 日晚最终酒店调整动线的节奏。</li>
-                <li>每一天的卡片里都已经塞进“当天一键预定”，默认酒店、活动、门票和航班操作入口都能直接点。</li>
+                <li>如果已经在路上，先看下面的“路上只看这个”，不用从头滑完整页。</li>
+                <li>深色按钮默认是主操作，浅色按钮通常是已确认订单、地图或同日最重要的补充入口。</li>
+                <li>每一天卡片里的“查看补充入口”已经折叠起来，里面才放备选、规则和不必第一时间点开的链接。</li>
                 <li>酒店区现在按“已确认订单优先”排，4 月 29 日晚单独标成待确认，避免把推荐项误看成已经订好。</li>
                 <li>景点区全部放官方票务入口，活动区放运营方直链或可执行的主渠道入口。</li>
                 <li>预算区分成“在地预算”和“含已购国际机票占位的总预算”。</li>
               </ul>
             </article>
           </div>
+        </div>
+      </section>
+
+      <section id="road">
+        <div class="section-head">
+          <div>
+            <h2>路上只看这个</h2>
+          </div>
+          <p>给旅行途中用的速览区。先点深色主按钮，浅色按钮多半是已确认订单、地图或当天最重要的补充入口；折叠里的“补充入口”才是备选和规则。</p>
+        </div>
+        <div class="callout">
+          <strong>实战建议：</strong>
+          这页现在更像执行面板而不是攻略。真的到了现场，不需要重新读全文，只要找到当天对应卡片，确认
+          <strong>今天住哪、今天飞不飞、今天先点哪个入口</strong>
+          就够了。
+        </div>
+        <div class="road-grid" style="margin-top: 18px">
+          <article class="quick-card confirmed-card">
+            <span class="badge badge-confirmed">4 月 23 日｜已确认</span>
+            <h3>抵达赫尔格达</h3>
+            <p>首晚只做入住和休整，不再硬塞景点。</p>
+            <ul>
+              <li>航班：easyJet Bristol → Hurghada，20:30 落地。</li>
+              <li>酒店：Mercure Hurghada Hotel。</li>
+            </ul>
+            <div class="button-row">
+              <a class="button-link" href="https://all.accor.com/hotel/1815/index.en.shtml" target="_blank" rel="noopener noreferrer">Mercure 订单</a>
+              <a class="button-link secondary" href="https://www.google.com/maps/search/?api=1&query=Mercure+Hurghada+Hotel+Safaga+Road+km+12+Hurghada+Egypt" target="_blank" rel="noopener noreferrer">酒店导航</a>
+            </div>
+          </article>
+
+          <article class="quick-card confirmed-card">
+            <span class="badge badge-confirmed">4 月 24-25 日｜已确认</span>
+            <h3>赫尔格达两日</h3>
+            <p>核心是 Day 2 出海、Day 3 冲沙观星，住宿不变。</p>
+            <ul>
+              <li>酒店仍住 Mercure，不用换房换城。</li>
+              <li>当天主操作优先点活动主推链接。</li>
+            </ul>
+            <div class="button-row">
+              <a class="button-link" href="https://www.aquariusredsea.com/res-hrg.html" target="_blank" rel="noopener noreferrer">Day 2 主推</a>
+              <a class="button-link secondary" href="https://www.scorpionsafari.com/activity/stargazing-safari-in-hurghada" target="_blank" rel="noopener noreferrer">Day 3 主推</a>
+            </div>
+          </article>
+
+          <article class="quick-card confirmed-card">
+            <span class="badge badge-confirmed">4 月 26-27 日｜已确认</span>
+            <h3>卢克索两晚</h3>
+            <p>26/27 两晚都按 Susan's Guest House and Tours 处理。</p>
+            <ul>
+              <li>Day 4 看卢克索神庙。</li>
+              <li>Day 5 热气球 + 帝王谷 + 卡纳克。</li>
+            </ul>
+            <div class="button-row">
+              <a class="button-link" href="https://uk.trip.com/hotels/detail/?hotelId=130421378" target="_blank" rel="noopener noreferrer">Susan's 订单</a>
+              <a class="button-link secondary" href="https://www.google.com/maps/search/?api=1&query=Susan%27s+Guest+House+and+Tours+Luxor+Egypt" target="_blank" rel="noopener noreferrer">酒店导航</a>
+            </div>
+          </article>
+
+          <article class="quick-card confirmed-card">
+            <span class="badge badge-confirmed">4 月 28 日｜已确认</span>
+            <h3>卢克索飞开罗</h3>
+            <p>这一天最重要的是国内段已经出票，不用再把飞行当作待办。</p>
+            <ul>
+              <li>航班：Nile Air NP072，10:15 → 11:20。</li>
+              <li>酒店：Tahrir Plaza Suites。</li>
+            </ul>
+            <div class="button-row">
+              <a class="button-link" href="https://www.nileair.com/index.php/manage-booking" target="_blank" rel="noopener noreferrer">航班管理</a>
+              <a class="button-link secondary" href="https://www.google.com/maps/search/?api=1&query=Tahrir+Plaza+Suites+19+Meret+Basha+Street+Tahrir+Square+Downtown+Cairo+Egypt" target="_blank" rel="noopener noreferrer">酒店导航</a>
+            </div>
+          </article>
+
+          <article class="quick-card pending-card">
+            <span class="badge badge-pending">4 月 29 日｜待补</span>
+            <h3>最后一晚仍未落单</h3>
+            <p>页面已经不再假装这晚住 Giza；它现在被明确保留为待确认项。</p>
+            <ul>
+              <li>白天可正常跑萨拉丁城堡 + 苏丹哈桑。</li>
+              <li>下午再根据最终酒店决定留市区还是转去 Giza。</li>
+            </ul>
+            <div class="button-row">
+              <a class="button-link" href="https://egymonuments.com/details/SalahEldinCitadel" target="_blank" rel="noopener noreferrer">城堡门票</a>
+              <a class="button-link secondary" href="https://egymonuments.com/details/Mosque-MadrassaSultanHassan" target="_blank" rel="noopener noreferrer">苏丹哈桑票</a>
+            </div>
+          </article>
+
+          <article class="quick-card confirmed-card">
+            <span class="badge badge-confirmed">4 月 30 日｜已确认</span>
+            <h3>返程日</h3>
+            <p>早上主跑金字塔和 GEM，17:40 EgyptAir 回伦敦。</p>
+            <ul>
+              <li>回程：Cairo → Heathrow，17:40 → 20:55。</li>
+              <li>如果 29 晚住市中心，要比 Giza 版更早出发。</li>
+            </ul>
+            <div class="button-row">
+              <a class="button-link" href="https://www.egyptair.com/en/fly/check-in/Pages/web-check-in.aspx" target="_blank" rel="noopener noreferrer">返程值机</a>
+              <a class="button-link secondary" href="https://visit-gem.com/en/AdmissionTkt" target="_blank" rel="noopener noreferrer">GEM 门票</a>
+            </div>
+          </article>
         </div>
       </section>
 
@@ -811,18 +1027,21 @@
               <li>建议在飞机落地前就把酒店地址、接机联系人和 WhatsApp 消息准备好，出关后直接照着执行会更顺。</li>
             </ul>
             <div class="booking-block">
-              <span class="booking-title">已确认酒店 / 当天操作</span>
+              <span class="booking-title booking-title-confirmed">已确认酒店 / 当天操作</span>
               <div class="button-row">
                 <a class="button-link" href="https://all.accor.com/hotel/1815/index.en.shtml" target="_blank" rel="noopener noreferrer">Day 1-3 已订酒店</a>
                 <a class="button-link secondary" href="https://all.accor.com/hotel/1815/index.en.shtml" target="_blank" rel="noopener noreferrer">Mercure 酒店主页</a>
                 <a class="button-link" href="https://www.easyjet.com/en/manage/my-bookings" target="_blank" rel="noopener noreferrer">easyJet My Bookings</a>
               </div>
-              <div class="support-row">
-                <a class="support-link" href="https://www.easyjet.com/en/help/booking-and-check-in/check-in" target="_blank" rel="noopener noreferrer">easyJet Check-in</a>
-                <a class="support-link" href="https://www.easyjet.com/en/help/baggage/hold-luggage" target="_blank" rel="noopener noreferrer">easyJet 行李</a>
-                <a class="support-link" href="https://web.vodafone.com.eg/en/tourist-line" target="_blank" rel="noopener noreferrer">落地 SIM</a>
-                <a class="support-link" href="https://www.visa2egypt.gov.eg/eVisa/Home" target="_blank" rel="noopener noreferrer">官方 e-Visa</a>
-              </div>
+              <details class="fold">
+                <summary>查看补充入口（值机 / SIM / e-Visa）</summary>
+                <div class="support-row">
+                  <a class="support-link" href="https://www.easyjet.com/en/help/booking-and-check-in/check-in" target="_blank" rel="noopener noreferrer">easyJet Check-in</a>
+                  <a class="support-link" href="https://www.easyjet.com/en/help/baggage/hold-luggage" target="_blank" rel="noopener noreferrer">easyJet 行李</a>
+                  <a class="support-link" href="https://web.vodafone.com.eg/en/tourist-line" target="_blank" rel="noopener noreferrer">落地 SIM</a>
+                  <a class="support-link" href="https://www.visa2egypt.gov.eg/eVisa/Home" target="_blank" rel="noopener noreferrer">官方 e-Visa</a>
+                </div>
+              </details>
               <p class="support-note">别忘了：护照、电子签、保险和首晚酒店订单放在随身包里，落地会最顺。</p>
             </div>
           </article>
@@ -848,9 +1067,12 @@
                 <a class="button-link secondary" href="https://www.egyptsunmarine.com/en/fleet/royal-sea-scope/location/ship" target="_blank" rel="noopener noreferrer">不会游泳备选</a>
                 <a class="button-link" href="https://all.accor.com/hotel/1815/index.en.shtml" target="_blank" rel="noopener noreferrer">Mercure 已订酒店</a>
               </div>
-              <div class="support-row">
-                <a class="support-link" href="https://all.accor.com/hotel/1815/index.en.shtml" target="_blank" rel="noopener noreferrer">赫尔格达酒店确认页</a>
-              </div>
+              <details class="fold">
+                <summary>查看补充入口</summary>
+                <div class="support-row">
+                  <a class="support-link" href="https://all.accor.com/hotel/1815/index.en.shtml" target="_blank" rel="noopener noreferrer">赫尔格达酒店确认页</a>
+                </div>
+              </details>
             </div>
           </article>
 
@@ -874,9 +1096,12 @@
                 <a class="button-link" href="https://www.scorpionsafari.com/activity/stargazing-safari-in-hurghada" target="_blank" rel="noopener noreferrer">Day 3 冲沙观星主推</a>
                 <a class="button-link secondary" href="https://all.accor.com/hotel/1815/index.en.shtml" target="_blank" rel="noopener noreferrer">Mercure 已订酒店</a>
               </div>
-              <div class="support-row">
-                <a class="support-link" href="https://all.accor.com/hotel/1815/index.en.shtml" target="_blank" rel="noopener noreferrer">赫尔格达酒店确认页</a>
-              </div>
+              <details class="fold">
+                <summary>查看补充入口</summary>
+                <div class="support-row">
+                  <a class="support-link" href="https://all.accor.com/hotel/1815/index.en.shtml" target="_blank" rel="noopener noreferrer">赫尔格达酒店确认页</a>
+                </div>
+              </details>
             </div>
           </article>
 
@@ -895,14 +1120,17 @@
               <li>包车最好提前说好中途补水和洗手间停靠，抵达后先 check-in，再轻装去神庙拍黄昏会舒服很多。</li>
             </ul>
             <div class="booking-block">
-              <span class="booking-title">已确认酒店 / 当天操作</span>
+              <span class="booking-title booking-title-confirmed">已确认酒店 / 当天操作</span>
               <div class="button-row">
                 <a class="button-link" href="https://uk.trip.com/hotels/detail/?hotelId=130421378" target="_blank" rel="noopener noreferrer">Day 4-5 已订酒店</a>
                 <a class="button-link" href="https://egymonuments.com/details/LuxorTemple" target="_blank" rel="noopener noreferrer">Day 4 卢克索神庙票</a>
               </div>
-              <div class="support-row">
-                <a class="support-link" href="https://uk.trip.com/hotels/detail/?hotelId=130421378" target="_blank" rel="noopener noreferrer">Susan's Guest House and Tours</a>
-              </div>
+              <details class="fold">
+                <summary>查看补充入口</summary>
+                <div class="support-row">
+                  <a class="support-link" href="https://uk.trip.com/hotels/detail/?hotelId=130421378" target="_blank" rel="noopener noreferrer">Susan's Guest House and Tours</a>
+                </div>
+              </details>
             </div>
           </article>
 
@@ -922,16 +1150,19 @@
               <li>26/27 两晚现在按你补充的 Trip.com 订单，已确认住 Susan's Guest House and Tours。</li>
             </ul>
               <div class="booking-block">
-              <span class="booking-title">已确认酒店 / 当天操作</span>
+              <span class="booking-title booking-title-confirmed">已确认酒店 / 当天操作</span>
               <div class="button-row">
                 <a class="button-link" href="https://www.trip.com/things-to-do/detail/102064009/" target="_blank" rel="noopener noreferrer">Day 5 热气球主推</a>
                 <a class="button-link secondary" href="https://www.booking.com/attractions/eg/prirv1gecwb0-sunrise-hot-air-balloon-ride.html" target="_blank" rel="noopener noreferrer">Day 5 热气球备选</a>
                 <a class="button-link" href="https://egymonuments.com/details/ValleyOfKings" target="_blank" rel="noopener noreferrer">Day 5 帝王谷票</a>
               </div>
-              <div class="support-row">
-                <a class="support-link" href="https://uk.trip.com/hotels/detail/?hotelId=130421378" target="_blank" rel="noopener noreferrer">Susan's 已订酒店</a>
-                <a class="support-link" href="https://egymonuments.com/details/KarnakTemple" target="_blank" rel="noopener noreferrer">Day 5 卡纳克票</a>
-              </div>
+              <details class="fold">
+                <summary>查看补充入口（酒店 / 卡纳克）</summary>
+                <div class="support-row">
+                  <a class="support-link" href="https://uk.trip.com/hotels/detail/?hotelId=130421378" target="_blank" rel="noopener noreferrer">Susan's 已订酒店</a>
+                  <a class="support-link" href="https://egymonuments.com/details/KarnakTemple" target="_blank" rel="noopener noreferrer">Day 5 卡纳克票</a>
+                </div>
+              </details>
             </div>
           </article>
 
@@ -950,17 +1181,20 @@
               <li>下午和傍晚留给休息，或视体力补一个很短的尼罗河 felucca / 市区散步；重点是把 Day 7 上午门票、打车方案和 4 月 29 日晚候选酒店都离线保存。</li>
             </ul>
             <div class="booking-block">
-              <span class="booking-title">已确认航班 / 酒店 / 当天操作</span>
+              <span class="booking-title booking-title-confirmed">已确认航班 / 酒店 / 当天操作</span>
               <div class="button-row">
                 <a class="button-link" href="https://www.nileair.com/index.php/manage-booking" target="_blank" rel="noopener noreferrer">Nile Air 航班管理</a>
                 <a class="button-link secondary" href="https://app.inn-connect.com/book/properties/Tahrir%20Plaza%20Suites" target="_blank" rel="noopener noreferrer">Day 6 已订酒店</a>
                 <a class="button-link" href="https://www.luxorandaswan.com/Egypt/tour/Felucca-Ride-on-the-Nile" target="_blank" rel="noopener noreferrer">Day 6 尼罗河短船</a>
               </div>
-              <div class="support-row">
-                <a class="support-link" href="https://www.nileair.com/baggage-allowance" target="_blank" rel="noopener noreferrer">Nile Air 行李</a>
-                <a class="support-link" href="https://www.booking.com/attractions/eg/prqdsbbavvrf-two-hour-nile-felucca-ride.en-gb.html" target="_blank" rel="noopener noreferrer">Day 6 短船备选</a>
-                <a class="support-link" href="https://app.inn-connect.com/book/properties/Tahrir%20Plaza%20Suites" target="_blank" rel="noopener noreferrer">Tahrir Plaza Suites 订单页</a>
-              </div>
+              <details class="fold">
+                <summary>查看补充入口（行李 / 短船备选 / 酒店）</summary>
+                <div class="support-row">
+                  <a class="support-link" href="https://www.nileair.com/baggage-allowance" target="_blank" rel="noopener noreferrer">Nile Air 行李</a>
+                  <a class="support-link" href="https://www.booking.com/attractions/eg/prqdsbbavvrf-two-hour-nile-felucca-ride.en-gb.html" target="_blank" rel="noopener noreferrer">Day 6 短船备选</a>
+                  <a class="support-link" href="https://app.inn-connect.com/book/properties/Tahrir%20Plaza%20Suites" target="_blank" rel="noopener noreferrer">Tahrir Plaza Suites 订单页</a>
+                </div>
+              </details>
               <p class="support-note">Gmail 已找到出票确认：Wing On Booking ID 6102597236，对应 Nile Air NP072（LXR → CAI，10:15 → 11:20）。</p>
             </div>
           </article>
@@ -981,14 +1215,17 @@
               <li>进清真寺的衣着尽量一次穿对：过膝下装、能遮肩的上衣或披肩，这样不用现场再临时找替代。</li>
             </ul>
             <div class="booking-block">
-              <span class="booking-title">当天操作</span>
+              <span class="booking-title booking-title-pending">当天操作</span>
               <div class="button-row">
                 <a class="button-link" href="https://egymonuments.com/details/SalahEldinCitadel" target="_blank" rel="noopener noreferrer">Day 7 城堡官方票</a>
                 <a class="button-link secondary" href="https://egymonuments.com/details/Mosque-MadrassaSultanHassan" target="_blank" rel="noopener noreferrer">Day 7 苏丹哈桑票</a>
               </div>
-              <div class="support-row">
-                <a class="support-link" href="https://www.egyptair.com/en/fly/check-in/Pages/web-check-in.aspx" target="_blank" rel="noopener noreferrer">返程值机入口</a>
-              </div>
+              <details class="fold">
+                <summary>查看补充入口</summary>
+                <div class="support-row">
+                  <a class="support-link" href="https://www.egyptair.com/en/fly/check-in/Pages/web-check-in.aspx" target="_blank" rel="noopener noreferrer">返程值机入口</a>
+                </div>
+              </details>
               <p class="support-note">4 月 29 日晚酒店目前待确认：页面不再默认写成 Great Pyramid Inn，避免把推荐项误看成已订。</p>
             </div>
           </article>
@@ -1014,10 +1251,13 @@
                 <a class="button-link secondary" href="https://visit-gem.com/en/AdmissionTkt" target="_blank" rel="noopener noreferrer">Day 8 GEM 官方票</a>
                 <a class="button-link" href="https://www.egyptair.com/en/fly/check-in/Pages/web-check-in.aspx" target="_blank" rel="noopener noreferrer">EgyptAir Web Check-in</a>
               </div>
-              <div class="support-row">
-                <a class="support-link" href="https://www.egyptair.com/en/Book/Pages/my-reservations.aspx" target="_blank" rel="noopener noreferrer">EgyptAir My Bookings</a>
-                <a class="support-link" href="https://www.egyptair.com/en/fly/baggage/Pages/baggage-allowance.aspx" target="_blank" rel="noopener noreferrer">EgyptAir 行李</a>
-              </div>
+              <details class="fold">
+                <summary>查看补充入口（订单 / 行李）</summary>
+                <div class="support-row">
+                  <a class="support-link" href="https://www.egyptair.com/en/Book/Pages/my-reservations.aspx" target="_blank" rel="noopener noreferrer">EgyptAir My Bookings</a>
+                  <a class="support-link" href="https://www.egyptair.com/en/fly/baggage/Pages/baggage-allowance.aspx" target="_blank" rel="noopener noreferrer">EgyptAir 行李</a>
+                </div>
+              </details>
               <p class="support-note">别忘了：回机场前确认值机、护照、返程订单、保险截图和所有重要文件都能离线打开；如果 29 晚补订了新酒店，也记得把地址离线保存。</p>
             </div>
           </article>
@@ -1036,7 +1276,7 @@
           <div>
             <h2>景点官方票务入口矩阵</h2>
           </div>
-          <p>以下优先用官方票务站。开放时段和价格按 2026-03-15 查到的公开口径整理，最终以下单页和现场公告为准。</p>
+          <p>以下优先用官方票务站。开放时段和价格按 2026-04-14 最后核对的公开口径整理，最终以下单页和现场公告为准。</p>
         </div>
         <div class="table-wrap">
           <table>
@@ -1130,10 +1370,10 @@
           <article class="hotel-card">
             <header>
               <div>
-                <span class="badge">赫尔格达｜已确认</span>
+                <span class="badge badge-confirmed">赫尔格达｜已确认</span>
                 <h3>Mercure Hurghada Hotel</h3>
               </div>
-              <span class="source-type">Accor 官方 / 邮件已确认</span>
+              <span class="source-type source-confirmed">Accor 官方 / 邮件已确认</span>
             </header>
             <p>
               已确认用于 Day 1-3，也就是 4 月 23、24、25 三晚。这个版本直接按你 Gmail 里的 Accor 确认邮件写，不再把赫尔格达段显示成候选酒店。
@@ -1156,10 +1396,10 @@
           <article class="hotel-card">
             <header>
               <div>
-                <span class="badge">卢克索｜已确认</span>
+                <span class="badge badge-confirmed">卢克索｜已确认</span>
                 <h3>Susan's Guest House and Tours</h3>
               </div>
-              <span class="source-type">Trip.com 订单 / 你已补充</span>
+              <span class="source-type source-confirmed">Trip.com 订单 / 你已补充</span>
             </header>
             <p>
               已确认用于 Day 4-5，也就是 4 月 26、27 两晚。这里按你刚补充的 Trip.com 酒店链接写死，不再继续展示卢克索候选项。
@@ -1182,10 +1422,10 @@
           <article class="hotel-card">
             <header>
               <div>
-                <span class="badge">开罗市中心｜已确认</span>
+                <span class="badge badge-confirmed">开罗市中心｜已确认</span>
                 <h3>Tahrir Plaza Suites</h3>
               </div>
-              <span class="source-type">Inn-Connect 官方 / 邮件已确认</span>
+              <span class="source-type source-confirmed">Inn-Connect 官方 / 邮件已确认</span>
             </header>
             <p>
               已确认用于 Day 6，也就是 4 月 28 日晚。这个页面现在按你 Gmail 里的确认单保留为开罗段唯一已落地的一晚。
@@ -1208,10 +1448,10 @@
           <article class="hotel-card">
             <header>
               <div>
-                <span class="badge">4 月 29 日晚｜待确认</span>
+                <span class="badge badge-pending">4 月 29 日晚｜待确认</span>
                 <h3>最后一晚酒店尚未落单</h3>
               </div>
-              <span class="source-type">当前没有找到确认邮件</span>
+              <span class="source-type source-pending">当前没有找到确认邮件</span>
             </header>
             <p>
               目前页面不再把 Great Pyramid Inn 或其他推荐酒店写成默认已订。也就是说，4 月 29 日晚现在就是待确认状态，等你补到正式订单后再写死。
@@ -1750,7 +1990,7 @@
         </div>
         <div class="footer-note">
           页面最后人工核对时间：
-          <strong>2026-03-15</strong>。
+          <strong>2026-04-14</strong>。
           酒店、活动和航班类价格波动最快；如果你要下单，优先把页内按钮点开再看一次当天价。
         </div>
       </section>
